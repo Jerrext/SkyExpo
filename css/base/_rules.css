@@ -1,0 +1,14 @@
+:root {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+}
+
+.bg-img {
+    background-image: url("../../img/fon4.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: -2;
+}

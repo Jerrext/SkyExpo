@@ -1,0 +1,207 @@
+.write-to-us {
+    position: fixed;
+    right: 40px;
+    bottom: 60px;
+    z-index: 999;
+    width: 500px;
+}
+
+.hint {
+    position: absolute;
+    background-color: rgb(224, 224, 224, 0.7);
+    padding: 12px 15px;
+    bottom: 6px;
+    right: 60px;
+    border-radius: 7px;
+}
+
+.hint::before {
+    position: absolute;
+    content: '';
+    border: 10px solid transparent; 
+    border-left: 7px solid rgb(224, 224, 224, 0.7);
+    right: -17px;
+    top: 13px;
+}
+
+.messege {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.fab {
+  cursor: pointer;
+  position: absolute;
+  right: 40px;
+}
+
+.fab:hover .fab-buttons {
+  /* opacity: 1;
+  visibility: visible; */
+}
+
+.fab:hover .fab-buttons__link {
+  /* transform: scaleY(1) scaleX(1) translateY(-16px) translateX(0px); */
+}
+
+.fab-action-button:hover + .fab-buttons .fab-buttons__link:before {
+  visibility: visible;
+  opacity: 1;
+  transform: scale(1);
+  transform-origin: right center 0;
+  transition-delay: 0.3s;
+}
+
+.fab-action-button {
+  position: absolute;
+  bottom: 0;
+  display: block;
+  width: 56px;
+  height: 56px;
+  background-color: #0099ff;
+  border-radius: 50%;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+  animation: pulsateMessege 2.5s ease-out infinite;
+}
+
+.fab-action-button::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: -2px;
+    top: -2px;
+    border-radius: 50%;
+    opacity: .8;
+    border: 2px solid #0099ff;
+    animation: pulsateCircle 2.5s ease-in 3s infinite;
+}
+
+.fab-buttons {
+  position: absolute;
+  left: 7px;
+  right: 0;
+  bottom: 50px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.2s;
+}
+
+.fab-buttons__item {
+  display: block;
+  text-align: center;
+  margin: 12px 0;
+}
+
+.fab-buttons__link {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  text-decoration: none;
+  background-color: #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+  transform: scaleY(0.5) scaleX(0.5) translateY(0px) translateX(0px);
+  -moz-transition: .3s;
+  -webkit-transition: .3s;
+  -o-transition: .3s;
+  transition: .3s;
+  border: 1px solid #fff;
+}
+
+[data-tooltip]:before {
+  top: 50%;
+  margin-top: -11px;
+  font-weight: 600;
+  border-radius: 2px;
+  background: #585858;
+  color: #fff;
+  content: attr(data-tooltip);
+  font-size: 12px;
+  text-decoration: none;
+  visibility: hidden;
+  opacity: 0;
+  padding: 4px 7px;
+  margin-right: 12px;
+  position: absolute;
+  transform: scale(0);
+  right: 100%;
+  white-space: nowrap;
+  transform-origin: top right;
+  transition: all .3s cubic-bezier(.25, .8, .25, 1);
+}
+
+[data-tooltip]:hover:before {
+  visibility: visible;
+  opacity: 1;
+  transform: scale(1);
+  transform-origin: right center 0;
+}
+
+.icon-material {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+}
+
+.icon-material_wa {
+  background: url("../../img/whatsapp.png") center no-repeat;
+  background-size: cover;
+}
+
+.icon-material_vi {
+  background: url("../../img/viber.png") center no-repeat;
+  background-size: cover;
+}
+
+.icon-material_tg {
+  background: url("../../img/telegram.png") center no-repeat;
+  background-size: cover;
+}
+
+.icon-material_email {
+  background: url("../../img/email.png") center no-repeat;
+  background-size: cover;
+}
+
+
+@keyframes pulsateMessege {
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes pulsateCircle {
+    0% {
+        transform: scale(0.9);
+    }
+    80% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.smooth-scroll {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  .smooth-scrollbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1px;
+  }
