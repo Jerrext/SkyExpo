@@ -13,6 +13,7 @@
     bottom: 6px;
     right: 60px;
     border-radius: 7px;
+    cursor: default;
 }
 
 .hint::before {
@@ -60,7 +61,7 @@
   display: block;
   width: 56px;
   height: 56px;
-  background-color: #0099ff;
+  background-color: #2db2ff;
   border-radius: 50%;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
   animation: pulsateMessege 2.5s ease-out infinite;
@@ -75,7 +76,7 @@
     top: -2px;
     border-radius: 50%;
     opacity: .8;
-    border: 2px solid #0099ff;
+    border: 2px solid #2db2ff;
     animation: pulsateCircle 2.5s ease-in 3s infinite;
 }
 

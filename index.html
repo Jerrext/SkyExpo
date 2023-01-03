@@ -11,7 +11,6 @@
     <title>SkyExpo</title>
 </head>
 <body>
-    <div class="bg-img"></div>
     <!-- <div class="write-to-us">
         <div class="messege-wrapper">
             <svg role="presentation" class="t898__icon t898__icon-write messege" width="35" height="32" viewBox="0 0 35 32" xmlns="">
@@ -20,7 +19,7 @@
         </div>
     </div> -->
     <div class="write-to-us">
-        <p class="hint">Написать нам</p>
+        <p class="hint" onmousedown="return false">Написать нам</p>
         <div class="fab">
             <span class="fab-action-button">
                 <svg role="presentation" class="t898__icon t898__icon-write messege" width="35" height="32" viewBox="0 0 35 32" xmlns="">
@@ -71,20 +70,23 @@
                         <a href="tel:+375447404933" class="header__phone link">+375 (44) 7404933</a>
                         <a href="tel:+79312816821" class="header__phone link">+7 (931) 2816821</a>
                     </div>
-                    <a href="#" class="header__call">Заказать звонок</a>
+                    <div class="header__btn">
+                        <div class="btn"><a href="#" >Заказать звонок</a></div>
+                    </div>
                 </div>
             </div>
         </div>
     </header>
     <main class="main">
         <div class="smooth-scroll">
+            <div class="bg-img"></div>
             <section class="banner" id="banner">
                 <div class="banner__img"></div>
                 <div class="banner__text">
-                    <h1>
+                    <h1 data-scroll="toggle(.scaleUpIn, .scaleUpOut) addHeight" class="reveal-text">
                         Заголовок
                     </h1>
-                    <p>
+                    <p class="reveal-text">
                         Какое-то описание Какое-то описание Какое-то описание Какое-то описаниеКакое-то описание Какое-то описание
                     </p>
                     <a href="" class="banner__btn">Подробнее</a>
@@ -92,7 +94,11 @@
                 <a href="#" class="banner__arrow-bottom"></a> 
             </section>
             <section class="about" id="about">
-
+                <div class="container">
+                    <h2 class="about__title _anim-items block_show _anim-no-hide">О нас</h2>
+                    <p class="about__desc _anim-items block_show _anim-no-hide">Мы - современная развивающаяся компания, занимающаяся продажей средств профессиональной гигиены, продажей и сервисным обслуживанием доильного оборудования, климатической техники, холодильных агрегатов. Осуществляем монтаж и полную техническую поддержку, гарантийное и постгарантийное обслуживание поставляемого оборудования.</p>
+                    <p class="about__desc _anim-items block_show _anim-no-hide">Наша компания, строит бизнес на принципах долгосрочности, финансовой дисциплины и лояльности, как по отношению к клиентам, так и к партнерам-производителям. Принимая во внимание  специфику Вашего бизнеса, мы предлагаем  больше, чем продукцию, мы предлагаем построение долгосрочных отношений, основанных на взаимном уважении интересов!</p>
+                </div>
             </section>
         </div>
     </main>

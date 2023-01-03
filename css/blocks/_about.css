@@ -2,4 +2,9 @@
     height: 600px;
     width: 100%;
     background-color: #fff;
+    position: relative;
+}
+
+.about__title {
+    font-size: 40px;
 }

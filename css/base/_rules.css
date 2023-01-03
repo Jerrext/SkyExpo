@@ -3,6 +3,14 @@
     font-weight: 500;
 }
 
+.container {
+    margin: 0 auto;
+    padding: 50px 20px;
+    max-width: 1300px;
+}
+
+/* Фон */
+
 .bg-img {
     background-image: url("../../img/fon4.jpg");
     background-size: cover;
@@ -11,4 +19,17 @@
     width: 100%;
     position: fixed;
     z-index: -2;
+}
+
+/* Появление элементов */
+
+.block_show {
+    opacity: 0;
+    transform: translate(0, 100px);
+    transition: 1s;
+}
+.block_show._active,
+._active .block_show {
+    opacity: 1;
+    transform: translate(0, 0);
 }

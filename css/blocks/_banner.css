@@ -59,14 +59,20 @@ body {
 }
 
 .banner__btn {
-    margin-top: 20px;
+    margin-top: 30px;
     display: block;
-    border-radius: 5px;
-    padding: 15px 25px;
+    border-radius: 50px;
+    padding: 15px 50px;
+    color: #000;
+    background-color: #fff;
+    box-shadow: 0 0 10px #fff;
+    transition: .5s;
+}
+
+.banner__btn:hover {
+    box-shadow: 0 0 15px #2db2ff;
+    background-color: #2db2ff;
     color: #fff;
-    box-shadow: 0 0 5px #fff, inset 0 0 5px #fff;
-    text-shadow: 0 0 3px #fff;
-    border: 1px solid #fff;
 }
 
 .banner__arrow-bottom {
