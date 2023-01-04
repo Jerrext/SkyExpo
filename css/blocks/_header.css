@@ -81,7 +81,7 @@
     font-size: 18px;
 }
 
-.header__call {
+/* .header__call {
     display: block;
     background-color: #fff;
     border-radius: 8px;
@@ -97,7 +97,7 @@
     color: #fff;
     box-shadow: 0 0 15px 2px #0099ff;
     transform: scale(1.07);
-}
+} */
 
 .scrollNav {
     background-color: rgba(8, 22, 38, 0.7);
@@ -107,4 +107,11 @@
 
 .header__btn {
     margin: 3px 0;
+}
+
+.header__logo {
+    background-color: #fff;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    box-shadow: 0 0 10px -5px #fff;
 }

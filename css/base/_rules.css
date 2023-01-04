@@ -3,10 +3,21 @@
     font-weight: 500;
 }
 
+body {
+    background-color: #fff;
+}
+
 .container {
     margin: 0 auto;
-    padding: 50px 20px;
+    padding: 20px;
     max-width: 1300px;
+}
+
+/* Шрифты */
+
+h2 {
+    text-transform: uppercase;
+    color: #cccccc;
 }
 
 /* Фон */
@@ -15,7 +26,7 @@
     background-image: url("../../img/fon4.jpg");
     background-size: cover;
     background-position: center;
-    height: 100%;
+    height: 1600px;
     width: 100%;
     position: fixed;
     z-index: -2;
@@ -23,13 +34,24 @@
 
 /* Появление элементов */
 
-.block_show {
+._anim-show-top,
+._anim-show-left {
     opacity: 0;
-    transform: translate(0, 100px);
-    transition: 1s;
+    transition: 2s;
 }
-.block_show._active,
-._active .block_show {
+
+._anim-show-top {
+    transform: translate(0, 100px);
+}
+
+._anim-show-left {
+    transform: translate(50px, 0);
+}
+
+._anim-show-top._active, 
+._anim-show-left._active{
     opacity: 1;
     transform: translate(0, 0);
 }
+
+/*  */

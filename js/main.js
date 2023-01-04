@@ -4,6 +4,7 @@ const smoothCoef = 0.05;
 const smoothScroll = document.querySelector(".smooth-scroll");
 const smoothScrollBar = document.querySelector(".smooth-scrollbar");
 const bgImg = document.querySelector(".bg-img")
+const titleLeft = document.querySelector(".title-block-left")
 
 function onResize(e) {
   smoothScrollBar.style.height = smoothScroll.offsetHeight + "px";
@@ -21,16 +22,21 @@ function loop(now) {
   curY = window.scrollY;
   dy = curY - prevY;
   y = Math.abs(dy) < 1 ? curY : y + dy * smoothCoef;
+  // console.log(dy)
   prevY = y;
   smoothScroll.style.transform = `translate3d(0,${-y}px,0)`;
   bgImg.style.transform = `translate3d(0,${(-y)/2}px,0)`
+  titleLeft.style.transform = `translateX(${qwe(titleLeft)/5 - 100}px)`
 
   requestAnimationFrame(loop);
 }
 requestAnimationFrame(loop);
 
-// Кнопка "Написать нам"
+function qwe(elem) {
+  return elem.getBoundingClientRect().top
+}
 
+// Кнопка "Написать нам"
 
 const fab = document.querySelector(".fab")
 const fabBtns = document.querySelector(".fab-buttons")
@@ -66,18 +72,13 @@ window.addEventListener("scroll", (e) => {
 const arrowBanner = document.querySelector(".banner__arrow-bottom")
 const about = document.getElementById("about")
 
-	
-
 arrowBanner.addEventListener("click", () => {
-  console.log(window.innerHeight)
   setTimeout(() => {
     window.scrollTo(0, window.innerHeight - 94)
   },0)
 })
 
 // Появление текста
-
-
 
 const animItems = document.querySelectorAll('._anim-items');
 if (animItems.length > 0) {
@@ -106,11 +107,18 @@ if (animItems.length > 0) {
         const rect = el.getBoundingClientRect(),
             scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
             scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            console.log(window.pageYOffset)
         return {
-            top: rect.top + 200,
+            top: rect.top + scrollTop,
             left: rect.left + scrollLeft
         }
     }
     animOnScroll();
 }
+
+// window.addEventListener("scroll", () => {
+//   let a = window.scrollY
+//   let coef = 0.1
+//   b = a * coef
+//   console.log(window.scrollY)
+//   titleLeft.style.transform = `translateX(${-b}px)`
+// })
