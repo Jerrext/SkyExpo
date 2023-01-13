@@ -8,7 +8,7 @@
     width: 100%;
     height: 100%;
     position: absolute;
-    background-image: linear-gradient(to bottom,rgba(0,0,0,0) 0,rgba(0,0,0,.4) 80%, rgba(0,0,0,.6) 100%);
+    background-image: linear-gradient(to bottom,rgba(0,0,0,.8) 0, rgba(0,0,0,0) 13%, rgba(0,0,0,.4) 80%, rgba(0,0,0,.6) 100%);
     background-repeat: repeat-x;
     opacity: 1;
     top: 0;
@@ -19,7 +19,7 @@
 }
 
 .banner::after {
-    background: linear-gradient(to bottom,rgba(0,0,0,0) 0,rgba(0,0,0,.3) 75%,rgba(0,0,0,.3) 100%);
+    background: linear-gradient(to bottom,rgba(0,0,0,0) 0,rgba(0,0,0,.8 ) 60%);
     bottom: 0;
     content: "";
     display: block;
@@ -34,7 +34,7 @@
     width: 700px;
     margin: 0 auto;
     display: flex;
-    height: 100%;
+    height: calc(100% - 7vw);
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -51,6 +51,8 @@
     margin-top: 20px;
     font-size: 20px;
     line-height: 30px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
 }
 
 .banner__btn {
