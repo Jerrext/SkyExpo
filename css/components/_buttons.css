@@ -98,3 +98,21 @@
 	width: 80%;
 	border-radius: 30px;
 }
+
+/* main btn */
+
+.main__btn {
+    display: inline-block;
+    border-radius: 50px;
+    padding: 15px 50px;
+    color: #000;
+    background-color: #fff;
+    box-shadow: 0 0 10px #fff;
+    transition: .5s;
+}
+
+.main__btn:hover {
+    box-shadow: 0 0 15px #2db2ff;
+    background-color: #2db2ff;
+    color: #fff;
+}

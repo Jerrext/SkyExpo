@@ -4,7 +4,6 @@ const smoothCoef = 0.05;
 const smoothScroll = document.querySelector(".smooth-scroll");
 const smoothScrollBar = document.querySelector(".smooth-scrollbar");
 const bgImg = document.querySelector(".bg-img")
-const titleRight = document.querySelector(".title-block-left")
 const animItemsIn = document.querySelectorAll('._anim-items'); // Появление блоков
 const animItemsOut = document.querySelectorAll('._anim-out')
 
@@ -21,7 +20,7 @@ let y = window.scrollY;
 let dy;
 
 const blockIn = window.innerHeight * 0.9 // Координаты появления блоков относительно окна
-const blockOut = window.innerHeight * 0.2
+const blockOut = window.innerHeight * 0.15
 // console.log(window.innerHeight/15)
 
 function loop(now) {
@@ -43,26 +42,33 @@ function loop(now) {
   for (let i = 0; i < animItemsOut.length; i++) {
     if ((offset(animItemsOut[i]).top < blockOut)) {
       // console.log(cord(animItemsOut[i]))
-      animItemsOut[i].style.transform = `translateY(${cord(animItemsOut[i])/3 - window.innerHeight/15}px)`
+      animItemsOut[i].style.transform = `translateY(${cord(animItemsOut[i])/3 - window.innerHeight/20}px)`
     }
   }
 
   smoothScroll.style.transform = `translate3d(0,${-y}px,0)`;
   bgImg.style.transform = `translate3d(0,${(-y)/2}px,0)`
-  titleRight.style.transform = `translateX(${cord(titleRight)/5 - 100}px)`
+  // titleRight.style.transform = `translateX(${cord(titleRight)/5 - 100}px)`
 
   // Карточки "О нас"
 
+  document.querySelectorAll(".title-block-left").forEach(item => {
+    item.style.transform = `translateX(${cord(item)/5 - 100}px)`
+  })
+
   document.querySelectorAll(".bottom-in").forEach(item => {
-    item.style.transform = `translateY(${cord(item)/15 - 30}px)`
+    if (item.classList.contains("products__bg")) {
+      item.style.transform = `translateY(${cord(item) - 1350}px)`
+    }
+    item.style.transform = `translateY(${cord(item)/15 - 40}px)`
   })
 
   document.querySelectorAll(".left-in").forEach(item => {
-    item.style.transform = `translateX(${-cord(titleRight)/15}px)`
+    item.style.transform = `translateX(${-cord(item)/10 + 50}px)`
   })
 
   document.querySelectorAll(".right-in").forEach(item => {
-    item.style.transform = `translateX(${cord(titleRight)/15}px)`
+    item.style.transform = `translateX(${cord(item)/10 - 50}px)`
   })
  
   // console.log(v)
@@ -126,13 +132,33 @@ window.addEventListener("scroll", (e) => {
 // Кнопка "Стрелка вниз"
 
 const arrowBanner = document.querySelector(".banner__arrow-bottom")
+const aboutLink = document.querySelector(".about-link")
+const productsLink = document.querySelector(".products-link")
 const about = document.getElementById("about")
+const products = document.getElementById("products")
 
-arrowBanner.addEventListener("click", () => {
+const scrollToFunc = (link, block) => {
+  link.addEventListener("click", () => {
+    setTimeout(() => {
+      window.scrollTo(0, cord(block) - 94)
+    },0)
+  })
+}
+
+console.log(about.offsetHeight)
+console.log(cord(about))
+
+scrollToFunc(arrowBanner, about)
+
+
+aboutLink.addEventListener("click", () => {
   setTimeout(() => {
-    window.scrollTo(0, window.innerHeight - 94)
+    // window.scrollTo(0, 0)
+    window.scrollBy(0, -cord(about) + about.offsetHeight)
   },0)
 })
+
+// productsLink.addEventListener()
 
 // Появление текста
 
@@ -180,3 +206,23 @@ arrowBanner.addEventListener("click", () => {
 //   console.log(window.scrollY)
 //   titleLeft.style.transform = `translateX(${-b}px)`
 // })
+
+// Свайпер "Продукты"
+
+var swiper = new Swiper(".mySwiper", {
+  effect: "coverflow",
+  grabCursor: true,
+  centeredSlides: true,
+  slidesPerView: "auto",
+  coverflowEffect: {
+    rotate: 50,
+    stretch: 0,
+    depth: 100,
+    modifier: 1,
+    slideShadows: true,
+  },
+  pagination: {
+    el: ".swiper-pagination",
+  },
+  loop: true
+});

@@ -1,5 +1,5 @@
 .banner {
-    height: calc(100vh + 9vw);
+    height: calc(100vh + 7vw);
     position: relative;
 }
 
@@ -53,23 +53,7 @@
     line-height: 30px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
-}
-
-.banner__btn {
-    margin-top: 30px;
-    display: block;
-    border-radius: 50px;
-    padding: 15px 50px;
-    color: #000;
-    background-color: #fff;
-    box-shadow: 0 0 10px #fff;
-    transition: .5s;
-}
-
-.banner__btn:hover {
-    box-shadow: 0 0 15px #2db2ff;
-    background-color: #2db2ff;
-    color: #fff;
+    margin-bottom: 30px;
 }
 
 .banner__arrow-bottom {
@@ -79,7 +63,7 @@
     border-right: 2px solid #fff;
     border-bottom: 2px solid #fff;
     z-index: 4;
-    bottom: calc(9vw + 30px);
+    bottom: calc(7vw + 30px);
     left: 50%;
     transform: translateX(-50%) rotate(45deg);
     animation: pulsate 1.5s ease-out infinite;
