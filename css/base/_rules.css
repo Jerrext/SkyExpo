@@ -10,13 +10,14 @@ body {
 .container {
     margin: 0 auto;
     padding: 20px;
-    max-width: 1300px;
+    max-width: 1400px;
 }
 
 .title {
     font-size: 100px;
     font-weight: 700;
     text-align: center;
+    padding: 50px 0 0;
 }
 
 /* Шрифты */
@@ -34,13 +35,23 @@ h2 {
     color: #cccccc;
 }
 
+h4 {
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.description {
+    font-weight: 400;
+    font-size: 20px;
+}
+
 /* Фон */
 
 .bg-img {
-    background-image: url('../../img/fon4.jpg');
+    /* background-image: url('../../img/fon4.jpg'); */
     background-size: cover;
-    background-position: center;
-    height: 1600px;
+    /* background-position: end; */
+    height: 1200px;
     width: 100%;
     position: fixed;
     z-index: -2;

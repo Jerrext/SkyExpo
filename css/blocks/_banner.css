@@ -1,5 +1,5 @@
 .banner {
-    height: calc(100vh + 7vw);
+    height: calc(100vh + 10vw);
     position: relative;
 }
 
@@ -63,7 +63,7 @@
     border-right: 2px solid #fff;
     border-bottom: 2px solid #fff;
     z-index: 4;
-    bottom: calc(7vw + 30px);
+    bottom: calc(10vw + 30px);
     left: 50%;
     transform: translateX(-50%) rotate(45deg);
     animation: pulsate 1.5s ease-out infinite;

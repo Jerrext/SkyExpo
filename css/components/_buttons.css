@@ -104,15 +104,35 @@
 .main__btn {
     display: inline-block;
     border-radius: 50px;
-    padding: 15px 50px;
+    padding: 15px 30px;
     color: #000;
     background-color: #fff;
     box-shadow: 0 0 10px #fff;
     transition: .5s;
+	position: relative;
+}
+
+.main__btn::before {
+	content: '';
+	position: absolute;
+	background-image: url("../../img/icon-arrow-white.svg");
+	background-repeat: no-repeat;
+	top: 50%;
+	right: 15px;
+	transform: translateY(-50%) scale(.75);
+	width: 30px;
+	height: 20px;
+	opacity: 0;
+	transition: 1s;
 }
 
 .main__btn:hover {
     box-shadow: 0 0 15px #2db2ff;
     background-color: #2db2ff;
     color: #fff;
+	padding-right: 60px;
+}
+
+.main__btn:hover::before {
+	opacity: 1;
 }

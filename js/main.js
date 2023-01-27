@@ -47,7 +47,7 @@ function loop(now) {
   }
 
   smoothScroll.style.transform = `translate3d(0,${-y}px,0)`;
-  bgImg.style.transform = `translate3d(0,${(-y)/2}px,0)`
+  bgImg.style.transform = `translate3d(0,${y/3 - 0}px,0)`
   // titleRight.style.transform = `translateX(${cord(titleRight)/5 - 100}px)`
 
   // Карточки "О нас"
@@ -158,6 +158,67 @@ aboutLink.addEventListener("click", () => {
   },0)
 })
 
+// Появление карточек преимуществ
+
+const cardsWrapper = document.querySelector('.projects__benefits-cards')
+
+const observer = new MutationObserver(function(mutations) {
+  // console.log(mutations);
+  let i = 0
+  const a = setInterval(() => {
+    if (cardsWrapper.lastElementChild.classList.contains("_active")) {
+      clearInterval(a)
+    } else {
+      cardsWrapper.children[i].classList.add("_active")
+      i++
+    }
+  }, 400)
+});
+
+observer.observe(cardsWrapper, {
+  childList: false,
+  attributes: true,
+  characterData: false,
+  attributeFilter: ["class"]
+});
+
+// Наведение на 3D карточки
+
+cards = document.querySelectorAll('.projects__benefits-card-item')
+
+VanillaTilt.init(cards, {
+  reverse: true,
+  max: 7,
+  glare: true,
+  'max-glare': 0.2,
+  scale:  1.05,  // Масштабирование
+  transition:  true,
+  speed: 3000,
+})
+
+// console.log(cards)
+
+// for (let i = 0; i < cards.length; i++) {
+//   cards[i].addEventListener('mousemove', startRotate)
+//   cards[i].addEventListener('mouseleave', stopRotate)
+// }
+
+// function startRotate(e) {
+//   const cardItem = this.querySelector('.projects__benefits-card-item')
+//   const halfHeight = cardItem.offsetHeight / 2
+//   const halfWidth = cardItem.offsetWidth / 2
+//   console.log(e.offsetX)
+  
+//   cardItem.style.transform = `rotateY(${(e.offsetX - halfWidth) / 10}deg) rotateX(${-(e.offsetY - halfHeight) / 10}deg)`
+// }
+
+// function stopRotate(e) {
+//   const cardItem = this.querySelector('.projects__benefits-card-item')
+//   cardItem.style.transform = 'rotate(0)'
+// }
+
+
+
 // productsLink.addEventListener()
 
 // Появление текста
@@ -207,9 +268,11 @@ aboutLink.addEventListener("click", () => {
 //   titleLeft.style.transform = `translateX(${-b}px)`
 // })
 
-// Свайпер "Продукты"
+// Свайперы
 
-var swiper = new Swiper(".mySwiper", {
+
+
+var swiper1 = new Swiper(".mySwiper1", {
   effect: "coverflow",
   grabCursor: true,
   centeredSlides: true,
@@ -226,3 +289,40 @@ var swiper = new Swiper(".mySwiper", {
   },
   loop: true
 });
+
+var swiper2 = new Swiper(".mySwiper2", {
+  slidesPerView: 1.5,
+  centeredSlides: true,
+  spaceBetween: 30,
+  autoplay: {
+    delay: 5000,
+    disableOnInteraction: false,
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    type: "fraction",
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  loop: true
+});
+
+// var swiper2 = new Swiper(".mySwiper2", {
+//   spaceBetween: 30,
+//   centeredSlides: true,
+//   autoplay: {
+//     delay: 2500,
+//     disableOnInteraction: false,
+//   },
+//   pagination: {
+//     el: ".swiper-pagination",
+//     clickable: true,
+//   },
+//   navigation: {
+//     nextEl: ".swiper-button-next",
+//     prevEl: ".swiper-button-prev",
+//   },
+//   loop: true
+// });
