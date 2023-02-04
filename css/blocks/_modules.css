@@ -1,7 +1,13 @@
 @import "./_messege.css";
 @import "./_header.css";
 @import "./_banner.css";
-@import "./_about.css";
+@import "./_aboutInfo.css";
+@import "./_aboutServices.css";
 @import "./_products.css";
 @import "./_projectsBenefits.css";
-@import "./_projectsResults.css";
+@import "./_projectsTestimonial.css";
+@import "./_projectsStatistics.css";
+@import "./_partners.css";
+@import "./_contacts.css";
+@import "./_footer.css";
+

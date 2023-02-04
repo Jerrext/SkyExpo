@@ -1,0 +1,101 @@
+.about {
+    /* height: 600px; */
+    margin-top: -5vw;
+    width: 100%;
+    position: relative;
+    /* margin-top: 1000px; */
+}
+
+.bg-cow {
+    background-image: url('../../img/cow3_2.png');
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 50%;
+    height: 35vw;
+    background-size: cover;
+    top: -13vw;
+    left: 0;
+    z-index: 4;
+}
+
+.about__wrapper {
+    background: linear-gradient(to bottom,rgba(255,255,255,1) 0,rgba(227,227,227,1 ) 50%, rgba(255,255,255,1 ) 100%);
+    position: relative;
+    z-index: 6;
+}
+
+.info {
+    margin-top: 70px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 5;
+}
+
+.info__item {
+    margin-bottom: 50px;
+    display: flex;
+    position: relative;
+    /* z-index: 9; */
+}
+
+.info__card {
+    padding: 50px;
+    max-width: 600px;
+    color: #fff;
+    border-radius: 15px;
+    position: relative;
+    margin: 0 auto;
+    left: 300px;
+    overflow: hidden;
+    /* box-shadow: 0 0 40px 0px rgba(0,0,0,.3); */
+
+}
+
+.info__card-bg {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    height: 100%;
+    /* transform: scale(1.2); */
+    /* background-image: url("../../img/spot2.png"); */
+    background-size: 100% 100%;
+    opacity: 1;
+    background-position: center center;
+    background: -webkit-linear-gradient(135deg, rgb(56 192 255 / 80%), rgb(0 154 223 / 80%));
+    background: -moz-linear-gradient(135deg, rgb(56 192 255 / 80%), rgb(0 154 223 / 80%));
+    background: linear-gradient(135deg, rgb(56 192 255 / 80%), rgb(0 154 223 / 80%));
+    transition: 1s;
+}
+
+.info__item:nth-child(even) .info__card{
+    left: -300px;
+}
+
+.info__img-wrapper {
+    width: 550px;
+    height: 250px;
+    position: absolute;
+    bottom: 0;
+    /* transform: translateY(-50%); */
+    /* background-color: #000; */
+    left: 0;
+}
+
+.info__item-img {
+    width: 100%;
+    height: 100%;
+    background-position: center center;
+    background-size: cover;
+    position: relative;
+    /* z-index: 544; */
+}
+
+/* .about ._anim-show-bottom._active {
+    transform: translateY(0);
+} */
+
+.info__item:nth-child(even) .info__img-wrapper{
+    left: auto;
+    right: 0;
+}

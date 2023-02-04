@@ -1,11 +1,18 @@
+const obs = {               // обсервер
+  childList: false,
+  attributes: true,
+  characterData: false,
+  attributeFilter: ["class"]
+}
+
 // Плавная прокрутка
 
 const smoothCoef = 0.05;
 const smoothScroll = document.querySelector(".smooth-scroll");
 const smoothScrollBar = document.querySelector(".smooth-scrollbar");
-const bgImg = document.querySelector(".bg-img")
+const bgBanner = document.querySelector(".bg-banner");
 const animItemsIn = document.querySelectorAll('._anim-items'); // Появление блоков
-const animItemsOut = document.querySelectorAll('._anim-out')
+const animItemsOut = document.querySelectorAll('._anim-out');
 
 function onResize(e) {
   smoothScrollBar.style.height = smoothScroll.offsetHeight + "px";
@@ -45,21 +52,23 @@ function loop(now) {
       animItemsOut[i].style.transform = `translateY(${cord(animItemsOut[i])/3 - window.innerHeight/20}px)`
     }
   }
-
   smoothScroll.style.transform = `translate3d(0,${-y}px,0)`;
-  bgImg.style.transform = `translate3d(0,${y/3 - 0}px,0)`
+  bgBanner.style.transform = `translate3d(0,${y/3}px,0)`
+  document.querySelectorAll('.bg-img').forEach(item => {
+    item.style.transform = `translateY(${-cord(item)/3 - 300}px)`
+  })
   // titleRight.style.transform = `translateX(${cord(titleRight)/5 - 100}px)`
 
-  // Карточки "О нас"
+  // Анимация блоков
 
   document.querySelectorAll(".title-block-left").forEach(item => {
     item.style.transform = `translateX(${cord(item)/5 - 100}px)`
   })
 
   document.querySelectorAll(".bottom-in").forEach(item => {
-    if (item.classList.contains("products__bg")) {
-      item.style.transform = `translateY(${cord(item) - 1350}px)`
-    }
+    // if (item.classList.contains("bg-img")) {
+    //   item.style.transform = `translateY(${cord(item) - 1350}px)`
+    // }
     item.style.transform = `translateY(${cord(item)/15 - 40}px)`
   })
 
@@ -158,16 +167,103 @@ aboutLink.addEventListener("click", () => {
   },0)
 })
 
+// Анимация "Наши услуги"
+
+const services = document.querySelector('.services__items')
+
+
+
+const observerServices = new MutationObserver(function(mutations) {
+  let i = 0
+  services.children[i].classList.add("_active")
+  const servicesShow = setInterval(() => {
+    if (services.lastElementChild.classList.contains("_active")) {
+      clearInterval(servicesShow)
+    } else {
+      i++
+      services.children[i].classList.add("_active")
+    }
+  }, 1000)
+});
+
+observerServices.observe(services, obs);
+
+
+const servicesLeft = document.querySelector('.services__left')
+
+const observerServicesLeft = new MutationObserver(function(mutations) {
+  let i = 0
+  const servicesShowLeft = setInterval(() => {
+    if (servicesLeft.firstElementChild.lastElementChild.classList.contains("_active")) {
+      clearInterval(servicesShowLeft)
+    } else {
+      servicesLeft.firstElementChild.children[i].classList.add("_active")
+      i++
+    }
+  }, 800)
+});
+
+observerServicesLeft.observe(servicesLeft, obs);
+
+
+const servicesRight = document.querySelector('.services__right')
+const servicesRightItems = document.querySelectorAll('.services__item-title')
+
+const observerServicesRight = new MutationObserver(function(mutations) {
+  let i = 0
+  const servicesShowRight = setInterval(() => {
+    if (servicesRightItems[servicesRightItems.length - 1].classList.contains("_active")) {
+      clearInterval(servicesShowRight)
+    } else {
+      servicesRightItems[i].classList.add("_active")
+      i++
+    }
+  }, 200)
+});
+
+observerServicesRight.observe(servicesRight, obs);
+
+// Аккордион
+
+const acc = document.getElementsByClassName("services__item-title");
+const panelAcc = document.getElementsByClassName("panel");
+
+for (let i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    // for (let i = 0; i < panelAcc.length; i++) {
+    //   panelAcc[i].style.maxHeight = null;
+    // }
+    const panel = this.nextElementSibling;
+
+    for (let i = 0; i < acc.length; i++) {
+      if (this == acc[i]) {
+        this.classList.toggle("active");
+        if (panel.style.maxHeight){
+          panel.style.maxHeight = null;
+        } else {
+          panel.style.maxHeight = panel.scrollHeight + "px";
+        } 
+      } else {
+        acc[i].classList.remove("active")
+        acc[i].nextElementSibling.style.maxHeight = null 
+      }
+    }
+
+    
+  });
+}
+
+
 // Появление карточек преимуществ
 
-const cardsWrapper = document.querySelector('.projects__benefits-cards')
+const cardsWrapper = document.querySelector('.benefits__cards')
 
-const observer = new MutationObserver(function(mutations) {
+const observerCards = new MutationObserver(function(mutations) {
   // console.log(mutations);
   let i = 0
-  const a = setInterval(() => {
+  const cardsShow = setInterval(() => {
     if (cardsWrapper.lastElementChild.classList.contains("_active")) {
-      clearInterval(a)
+      clearInterval(cardsShow)
     } else {
       cardsWrapper.children[i].classList.add("_active")
       i++
@@ -175,16 +271,11 @@ const observer = new MutationObserver(function(mutations) {
   }, 400)
 });
 
-observer.observe(cardsWrapper, {
-  childList: false,
-  attributes: true,
-  characterData: false,
-  attributeFilter: ["class"]
-});
+observerCards.observe(cardsWrapper, obs);
 
 // Наведение на 3D карточки
 
-cards = document.querySelectorAll('.projects__benefits-card-item')
+cards = document.querySelectorAll('.benefits__card-item')
 
 VanillaTilt.init(cards, {
   reverse: true,
@@ -270,8 +361,6 @@ VanillaTilt.init(cards, {
 
 // Свайперы
 
-
-
 var swiper1 = new Swiper(".mySwiper1", {
   effect: "coverflow",
   grabCursor: true,
@@ -286,6 +375,10 @@ var swiper1 = new Swiper(".mySwiper1", {
   },
   pagination: {
     el: ".swiper-pagination",
+  },
+  navigation: {
+    nextEl: ".products .swiper-button-next",
+    prevEl: ".products .swiper-button-prev",
   },
   loop: true
 });
@@ -303,26 +396,24 @@ var swiper2 = new Swiper(".mySwiper2", {
     type: "fraction",
   },
   navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
+    nextEl: ".projects .swiper-button-next",
+    prevEl: ".projects .swiper-button-prev",
   },
   loop: true
 });
 
-// var swiper2 = new Swiper(".mySwiper2", {
-//   spaceBetween: 30,
-//   centeredSlides: true,
-//   autoplay: {
-//     delay: 2500,
-//     disableOnInteraction: false,
-//   },
-//   pagination: {
-//     el: ".swiper-pagination",
-//     clickable: true,
-//   },
-//   navigation: {
-//     nextEl: ".swiper-button-next",
-//     prevEl: ".swiper-button-prev",
-//   },
-//   loop: true
-// });
+
+var swiper3 = new Swiper(".mySwiper3", {
+  slidesPerView: 5,
+  centeredSlides: true,
+  spaceBetween: 30,
+  autoplay: {
+    delay: 5000,
+    disableOnInteraction: false,
+  },
+  navigation: {
+    nextEl: ".partners .swiper-button-next",
+    prevEl: ".partners .swiper-button-prev",
+  },
+  loop: true
+});

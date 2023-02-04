@@ -1,10 +1,9 @@
-.projects__testimonial-swiper {
+.testimonial__swiper {
     margin: 80px 0;
 }
 
 .projects .swiper {
     width: 100%;
-    overflow: visible !important;
 }
 
 .projects .swiper-wrapper {
