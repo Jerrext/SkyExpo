@@ -15,7 +15,7 @@
     right: 0;
     bottom: 0;
     left: 0;
-    z-index: -1;
+    z-index: 1;
 }
 
 .banner::after {
@@ -27,7 +27,7 @@
     left: 0;
     position: absolute;
     right: 0;
-    z-index: -1;
+    z-index: 1;
 }
 
 .banner__text {
@@ -40,6 +40,23 @@
     justify-content: center;
     color: #fff;
     text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.banner__text > h1,
+.banner__text > p,
+.banner__text > .main__btn {
+    transform: translateY(30px);
+    opacity: 0;
+    transition: all .5s, transform 1s, opacity 1s;
+}
+
+.banner__text > h1._active,
+.banner__text > p._active,
+.main__btn._active {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .banner__text > h1 {
@@ -51,7 +68,7 @@
     margin-top: 20px;
     font-size: 20px;
     line-height: 30px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat';
     font-weight: 400;
     margin-bottom: 30px;
 }

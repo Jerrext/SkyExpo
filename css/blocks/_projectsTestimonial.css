@@ -1,3 +1,16 @@
+.testimonial {
+    overflow: hidden;
+    width: 100%;
+}
+
+.testimonial .swiper-button-prev {
+    left: 150px !important;
+}
+
+.testimonial .swiper-button-next {
+    right: 150px !important;
+}
+
 .testimonial__swiper {
     margin: 80px 0;
 }

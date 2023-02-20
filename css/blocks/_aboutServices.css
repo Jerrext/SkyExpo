@@ -1,5 +1,5 @@
 .services {
-    margin: 70px 0;
+    margin: 100px 0;
 }
 
 .services__items {
@@ -93,8 +93,8 @@
 }
 
 .services__item-title {
+    font-family: 'Roboto', sans-serif;
     box-shadow: 0 10px 30px 0px rgba(0, 0, 0, .5);
-
     transform: translateY(60px);
     opacity: 0;
     font-size: 20px;

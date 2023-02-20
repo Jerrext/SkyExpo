@@ -110,8 +110,5 @@
 }
 
 .header__logo {
-    background-color: #fff;
-    border-radius: 50%;
-    border: 1px solid #fff;
-    box-shadow: 0 0 10px -5px #fff;
+    width: 170px;
 }

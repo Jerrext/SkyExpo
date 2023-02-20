@@ -6,16 +6,12 @@
     /* margin-top: 1000px; */
 }
 
-.bg-cow {
-    background-image: url('../../img/cow3_2.png');
-    background-repeat: no-repeat;
-    position: absolute;
+.bg-cow1 {
+    background-image: url('../../img/cow3_2-min.png');
     width: 50%;
     height: 35vw;
-    background-size: cover;
     top: -13vw;
     left: 0;
-    z-index: 4;
 }
 
 .about__wrapper {
@@ -37,6 +33,10 @@
     display: flex;
     position: relative;
     /* z-index: 9; */
+}
+
+.info__item:last-child {
+    margin-bottom: 0;
 }
 
 .info__card {
@@ -64,7 +64,7 @@
     background-position: center center;
     background: -webkit-linear-gradient(135deg, rgb(56 192 255 / 80%), rgb(0 154 223 / 80%));
     background: -moz-linear-gradient(135deg, rgb(56 192 255 / 80%), rgb(0 154 223 / 80%));
-    background: linear-gradient(135deg, rgb(56 192 255 / 80%), rgb(0 154 223 / 80%));
+    background: linear-gradient(135deg, rgba(28, 183, 255, 0.8), rgba(0, 136, 199, 0.904));
     transition: 1s;
 }
 
