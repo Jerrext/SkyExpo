@@ -16,7 +16,7 @@ const loadingAnim = () => {
   const fab = document.querySelector('.fab')
   // const translateX = ((item1.parentElement.parentElement.clientWidth - item1.clientWidth) / 2)
   console.log(item2.getBoundingClientRect().width)
-  setTimeout(() => {item1.style.width = `${item2.getBoundingClientRect().width}px`}, 300)
+  setTimeout(() => {item1.style.width = `${item2.getBoundingClientRect().width}px`}, 500)
   
   // item2.style.transform = `translate(${translateX}px, 0)`
   const time = 4200
@@ -49,23 +49,17 @@ const loadingAnim = () => {
 
 loadingAnim()
 
-
-
-
-// Создание элемента
-
-// const createElem = (tag, options, to) => {
-//   const elem = document.createElement(tag)
-
-//   Object.keys(options).forEach(item => {
-//       elem[item] = options[item]
-//   })
-//   to.appendChild(elem)
-
-//   return 
-// }
-
 // Модальные окна
+
+const overflowToggle = (arg) => {
+  if (arg) {
+    document.documentElement.style.overflow = "hidden auto"
+    document.body.style.overflow = "hidden auto"
+  } else {
+    document.documentElement.style.overflow = "hidden"
+    document.body.style.overflow = "hidden"
+  }
+}
 
 const callBtnHandler = (popupContainer) => {
   const popup = document.querySelector(popupContainer)
@@ -74,16 +68,14 @@ const callBtnHandler = (popupContainer) => {
   const popupClose = document.querySelector(`${popupContainer} .popup__close`)
 
   popup.style.display = "block"
-  document.documentElement.style.overflow = "hidden"
-  document.body.style.overflow = "hidden"
+  overflowToggle(false)
 
   const popUpClose = () => {
     popup.style.display = "none"
     overlay.style.opacity = "0"
     popupWrapper.style.opacity = "0"
     popupWrapper.style.top = "calc(50% + 30px)"
-    document.documentElement.style.overflow = "hidden auto"
-    document.body.style.overflow = "hidden auto"
+    overflowToggle(true)
   }
 
   setTimeout(() => {
@@ -104,24 +96,60 @@ const callBtnHandler = (popupContainer) => {
 }
 
 document.querySelector(".header .btn").addEventListener("click", () => callBtnHandler(".popup-call"))
-document.querySelector(".main__btn").addEventListener("click", () => callBtnHandler(".popup-call"))
+document.querySelector(".burger__btn").addEventListener("click", () => callBtnHandler(".popup-call"))
+document.querySelector(".banner__btn").addEventListener("click", () => callBtnHandler(".popup-call"))
 document.querySelector(".fab-buttons__link").addEventListener("click", () => callBtnHandler(".popup-email"))
+
+// Burger menu
+
+const burgerMenu = document.querySelector(".burger")
+const burgerList = [...document.querySelector(".burger__list").children]
+const burgerTitle = document.querySelector(".burger__company")
+const burgerBtn = document.querySelector(".burger__btn")
+const bugerClose = document.querySelector(".burger__close")
+
+const burgerMenuBtnHandler = () => {
+  burgerMenu.style.display = "block"
+  setTimeout(() => {
+    burgerMenu.style.left = "0"
+    let i = 0
+    burgerTitle.style.opacity = "1"
+    overflowToggle(false)
+    setTimeout(() => {
+      const burgerLinksShow = setInterval(() => {
+        if (burgerList[burgerList.length - 1].classList.contains("_active")) {
+          clearInterval(burgerLinksShow)
+          burgerBtn.style.opacity = "1"
+          bugerClose.style.opacity = "1"
+        } else {
+          burgerList[i].classList.add("_active")
+          i++
+        }
+      }, 200)
+    }, 300)
+  }, 0)
+  
+}
+
+const burgerCloseHandler = () => {
+  burgerMenu.style.left = "-100vw"
+  overflowToggle(true)
+  burgerTitle.style.opacity = ""
+  burgerList.forEach(item => item.classList.remove("_active"))
+  burgerBtn.style.opacity = ""
+  bugerClose.style.opacity = ""
+  setTimeout(() => burgerMenu.style.display = "none", 700)
+}
+
+burgerBtn.addEventListener("click", burgerCloseHandler)
+document.querySelector(".header__burger-wrapper").addEventListener("click", burgerMenuBtnHandler)
+bugerClose.addEventListener("click", burgerCloseHandler)
 
 // Плавная прокрутка
 
-const smoothCoef = 0.05;
-const smoothScroll = document.querySelector(".smooth-scroll");
-const smoothScrollBar = document.querySelector(".smooth-scrollbar");
 const bgBanner = document.querySelector(".bg-banner");
 const animItemsIn = document.querySelectorAll('._anim-items'); // Появление блоков
 const animItemsOut = document.querySelectorAll('._anim-out');
-
-// function onResize(e) {
-//   smoothScrollBar.style.height = smoothScroll.offsetHeight + "px";
-// }
-
-// window.addEventListener("resize", onResize);
-// onResize();
 
 // Появление блоков
 
@@ -164,6 +192,8 @@ window.addEventListener("scroll", () => {
 
   // Анимация блоков
 
+  if (window.innerWidth < 1000) return false
+
   document.querySelectorAll(".title-block-left").forEach(item => {
     if (cord(item) < (window.innerHeight + 100) && cord(item) > -300) {
       item.style.transform = `translateX(${cord(item)/7}px)`
@@ -175,7 +205,7 @@ window.addEventListener("scroll", () => {
     //   item.style.transform = `translateY(${cord(item) - 1350}px)`
     // }
     if (cord(item) < (window.innerHeight + 100) && cord(item) > -300) {
-      item.style.transform = `translateY(${cord(item)/15 - 40}px)`
+      item.style.transform = `translateY(${cord(item)/15 - 20}px)`
     }
   })
 
@@ -190,49 +220,11 @@ window.addEventListener("scroll", () => {
       item.style.transform = `translateX(${cord(item)/10 - 50}px)`
     }
   })
-
-  // let prevY = window.scrollY;
-  // console.log(prevY)
-  // let curY = window.scrollY;
-  // let y = window.scrollY;
-  // let dy;
-  // curY = window.scrollY;
-  // dy = curY - prevY;
-  // y = Math.abs(dy) < 1 ? curY : y + dy * smoothCoef;
-  // prevY = y;
-  // console.log(y)
 })
 
 // showBlocks()
 
 // Скрытие блоков
-
-
-
-
-
-
-// // console.log(window.innerHeight/15)
-
-// function loop(now) {
-//   curY = window.scrollY;
-//   dy = curY - prevY;
-//   y = Math.abs(dy) < 1 ? curY : y + dy * smoothCoef;
-//   prevY = y;
-
-  
-
-  
-//   smoothScroll.style.transform = `translate3d(0,${-y}px,0)`;
-  
- 
-//   // console.log(v)
-
-//   // v.style.transform = `translateX(${(-y)/10}}px)`
-    
-//   requestAnimationFrame(loop);
-// }
-// requestAnimationFrame(loop);
 
 function offset(el) {
   const rect = el.getBoundingClientRect()
@@ -278,50 +270,44 @@ window.addEventListener("scroll", (e) => {
   } else {
     header.classList.remove("scrollNav")
   }
-
-  // console.log(cord(v))
-
-  
 })
 
 // Скролл до блоков
 
+const elemOffsetY = (elem) => {
+  let box = elem.getBoundingClientRect()
+  console.log(box.top + window.pageYOffset)
+  return box.top + window.pageYOffset
+}
+
+const scrollToFunc = (link, block, index) => {
+  link.addEventListener("click", () => {
+    if (index === 0) burgerCloseHandler()
+    setTimeout(() => {
+      window.scrollTo(0, elemOffsetY(block) - 90)
+    },0)
+  })
+}
+
 const scrollLink = () => {
   const arrowBanner = document.querySelector(".banner__arrow-bottom")
-  const aboutLink = document.querySelector(".about-link")
-  const servicesLink = document.querySelector(".services-link")
+  const aboutLink = [...document.querySelectorAll(".about-link")]
+  const servicesLink = [...document.querySelectorAll(".services-link")]
   // const productsLink = document.querySelector(".products-link")
   const about = document.getElementById("about")
   const services = document.getElementById("services")
   // const products = document.getElementById("products")
 
-  const elemOffsetY = (elem) => {
-    let box = elem.getBoundingClientRect()
-
-    return box.top + window.pageYOffset
-  }
-
-  const scrollToFunc = (link, block) => {
-    link.addEventListener("click", () => {
-      setTimeout(() => {
-        window.scrollTo(0, elemOffsetY(block) - 90)
-      },0)
-    })
-  }
-
   scrollToFunc(arrowBanner, about)
-  scrollToFunc(aboutLink, about)
-  scrollToFunc(servicesLink, services)
+  aboutLink.forEach((item, index) => {
+    scrollToFunc(item, about, index)
+  })
+  servicesLink.forEach((item, index) => {
+    scrollToFunc(item, services, index)
+  })
 }
 
 scrollLink()
-
-// aboutLink.addEventListener("click", () => {
-//   setTimeout(() => {
-//     // window.scrollTo(0, 0)
-//     window.scrollBy(0, -cord(about) + about.offsetHeight)
-//   },0)
-// })
 
 // Анимация "Наши услуги"
 
@@ -633,9 +619,21 @@ var swiper2 = new Swiper(".mySwiper2", {
   loop: true
 });
 
+const getSlidesPerView = () => {
+  let screenWidth = 5
+
+  if (window.innerWidth < 1650 && window.innerWidth > 1200) {
+    screenWidth = 4 
+  } else if (window.innerWidth < 1200) {
+    screenWidth = 3
+  } 
+
+  return screenWidth
+}
+
 
 var swiper3 = new Swiper(".mySwiper3", {
-  slidesPerView: 5,
+  slidesPerView: getSlidesPerView(),
   centeredSlides: true,
   spaceBetween: 30,
   autoplay: {

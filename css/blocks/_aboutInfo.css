@@ -40,13 +40,13 @@
 }
 
 .info__card {
-    padding: 50px;
-    max-width: 600px;
+    padding: 3rem;
+    max-width: 32vw;
     color: #fff;
     border-radius: 15px;
     position: relative;
     margin: 0 auto;
-    left: 300px;
+    left: 20rem;
     overflow: hidden;
     /* box-shadow: 0 0 40px 0px rgba(0,0,0,.3); */
 
@@ -69,12 +69,12 @@
 }
 
 .info__item:nth-child(even) .info__card{
-    left: -300px;
+    left: -20rem;
 }
 
 .info__img-wrapper {
-    width: 550px;
-    height: 250px;
+    width: 37rem;
+    height: 100%;
     position: absolute;
     bottom: 0;
     /* transform: translateY(-50%); */
@@ -98,4 +98,9 @@
 .info__item:nth-child(even) .info__img-wrapper{
     left: auto;
     right: 0;
+}
+
+.info__desc._anim-show-right,
+.info__desc._anim-show-left {
+    transition: 2s .3s;
 }

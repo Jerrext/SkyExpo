@@ -1,3 +1,4 @@
 @import "./base/_modules.css";
 @import "./blocks/_modules.css";
 @import "./components/_modules.css";
+@import "./media-queries/_media.css";

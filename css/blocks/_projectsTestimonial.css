@@ -1,14 +1,15 @@
 .testimonial {
+    padding: 2.5rem 0;
     overflow: hidden;
     width: 100%;
 }
 
 .testimonial .swiper-button-prev {
-    left: 150px !important;
+    left: 7.5rem !important;
 }
 
 .testimonial .swiper-button-next {
-    right: 150px !important;
+    right: 7.5rem !important;
 }
 
 .testimonial__swiper {

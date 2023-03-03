@@ -3,8 +3,8 @@
 	position: relative;
 	top: 0;
 	left: 0;
-	width: 250px;
-	height: 50px;
+	width: 14rem;
+	height: 3rem;
 	margin: 0;
 	display: flex;
 	justify-content: center;
@@ -23,8 +23,7 @@
 	box-shadow: 0 15px 15px rgba(0, 0, 0, 0.3);
 	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 	border-top: 1px solid rgba(255, 255, 255, 0.1);
-	border-radius: 30px;
-	padding: 10px;
+	border-radius: 1.5rem;
 	letter-spacing: 1px;
 	overflow: hidden;
 	color: #fff;
@@ -36,7 +35,7 @@
 	cursor: pointer;
 }
 .btn:hover span {
-	letter-spacing: 3px;
+	letter-spacing: 0.15rem;
 }
 .btn span::before {
 	content: "";
@@ -58,22 +57,22 @@
 	position: absolute;
 	left: 50%;
 	transform: translatex(-50%);
-	bottom: -5px;
-	width: 30px;
-	height: 10px;
+	bottom: -0.25rem;
+	width: 1.5rem;
+	height: 0.5rem;
 	background: #f00;
 	border-radius: 10px;
 	transition: 0.5s;
 	transition-delay: 0.5;
     background: #2db2ff;
-	box-shadow: 0 0 5px #2db2ff, 0 0 15px #2db2ff, 0 0 30px #2db2ff,
-		0 0 60px #2db2ff;
+	box-shadow: 0 0 5px #2db2ff, 0 0 0.75rem #2db2ff, 0 0 1.5rem #2db2ff,
+		0 0 3rem #2db2ff;
 }
 .btn:hover::before /*lightup button*/ {
 	bottom: 0;
 	height: 50%;
 	width: 80%;
-	border-radius: 30px;
+	border-radius: 1.5rem;
 }
 
 .btn::after {
@@ -81,9 +80,9 @@
 	position: absolute;
 	left: 50%;
 	transform: translatex(-50%);
-	top: -5px;
-	width: 30px;
-	height: 10px;
+	top: -0.25rem;
+	width: 1.5rem;
+	height: 0.5rem;
 	background: #f00;
 	border-radius: 10px;
 	transition: 0.5s;
@@ -102,15 +101,15 @@
 /* main btn */
 
 .main__btn {
-    display: inline-block;
-    border-radius: 50px;
-    padding: 15px 30px;
-    color: #000;
-    background-color: #fff;
-    box-shadow: 0 0 10px #fff;
+	display: inline-block;
+	border-radius: 2.5rem;
+	padding: 0.75rem 1.5rem;
+	color: #000;
+	background-color: #fff;
+	box-shadow: 0 0 10px #fff;
 	position: relative;
 	cursor: pointer;
-	transition: .5s;
+	transition: all .5s, opacity 1s;
 }
 
 .main__btn::before {
@@ -119,10 +118,10 @@
 	background-image: url("../../img/icon-arrow-white.svg");
 	background-repeat: no-repeat;
 	top: 50%;
-	right: 15px;
+	right: 0.75rem;
 	transform: translateY(-50%) scale(.75);
 	width: 30px;
-	height: 20px;
+	height: 18px;
 	opacity: 0;
 	transition: 1s;
 }
@@ -131,7 +130,7 @@
     box-shadow: 0 0 15px #2db2ff;
     background-color: #2db2ff;
     color: #fff;
-	padding-right: 60px;
+		padding-right: 50px;
 }
 
 .main__btn:hover::before {

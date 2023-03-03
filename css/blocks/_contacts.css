@@ -45,7 +45,7 @@
 
 .contacts__info-item {
     display: grid;
-    grid-gap: 20px;
+    grid-column-gap: 20px;
     grid-template-columns: 1fr 5fr;
     border-radius: 20px;
     box-sizing: border-box;
@@ -104,21 +104,20 @@
 }
 
 .contacts__form {
-    transform: translateY(-50%);
     background-color: #161b22;
     border-radius: 30px;
     box-sizing: border-box;
     box-shadow: 0 0 40px -10px #000;
     padding: 50px 30px 30px;
     width: 700px;
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-    
 }
 
-.contacts__form-text .second-title{
+.contacts .second-title {
     margin-top: 0;
+}
+
+.contacts ._active.second-title::before {
+    height: 2px;
 }
 
 

@@ -1,8 +1,9 @@
 .btn-up {
   position: fixed;
   background-color: #30363d;
-  left: 20px;
-  bottom: 40px;
+  font-size: max(1rem, 12px);
+  left: 1em;
+  bottom: 2em;
   border-radius: 50%;
   cursor: pointer;
   display: flex;
@@ -10,8 +11,8 @@
   justify-content: center;
   transition: opacity 0.15s ease-in-out, transform 0.3s ease-in-out;
   color: #fff;
-  width: 60px;
-  height: 60px;
+  width: 3em;
+  height: 3em;
   opacity: 1;
   transform: translateY(0);
   z-index: 999;
@@ -27,7 +28,7 @@
 }
 
 .btn-up-icon {
-  width: 40px;
-  height: 40px;
+  width: 2em;
+  height: 2em;
   fill: currentcolor;
 }

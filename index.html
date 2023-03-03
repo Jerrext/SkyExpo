@@ -46,8 +46,7 @@
         <span class="hint" onmousedown="return false">Написать нам</span>
         <div class="fab">
             <span class="fab-action-button">
-                <svg role="presentation" class="t898__icon t898__icon-write messege" width="35" height="32"
-                    viewBox="0 0 35 32" xmlns="">
+                <svg role="presentation" class="t898__icon t898__icon-write messege" viewBox="0 0 35 32" xmlns="">
                     <path
                         d="M11.2667 12.6981H23.3667M11.2667 16.4717H23.3667M4.8104 23.5777C2.4311 21.1909 1 18.1215 1 14.7736C1 7.16679 8.38723 1 17.5 1C26.6128 1 34 7.16679 34 14.7736C34 22.3804 26.6128 28.5472 17.5 28.5472C15.6278 28.5472 13.8286 28.2868 12.1511 27.8072L12 27.7925L5.03333 31V23.8219L4.8104 23.5777Z"
                         stroke="#ffffff" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"
@@ -87,15 +86,17 @@
                     <h3 class="second-title">Заказать звонок</h3>
                     <p class="second-desc description">Оставьте заявку и мы свяжемся с вами в ближайшее время и проконсультируем по всем вопросам</p>
                 </div>
-                <div class="input-container">
-                    <input id="name" class="input" type="text" placeholder=" " required name="name"/>
-                    <div class="cut"></div>
-                    <label for="name" class="placeholder">Ваше имя*</label>
-                </div>
-                <div class="input-container">
-                    <input id="telephone" class="input" type="tel" placeholder=" " required name="tel"/>
-                    <div class="cut"></div>
-                    <label for="telephone" class="placeholder">Телефон*</label>
+                <div class="contacts__form-inputs">
+                    <div class="input-container i2">
+                        <input id="name" class="input" type="text" placeholder=" " required name="name"/>
+                        <div class="cut"></div>
+                        <label for="name" class="placeholder">Ваше имя*</label>
+                    </div>
+                    <div class="input-container i3">
+                        <input id="telephone" class="input" type="tel" placeholder=" " required name="tel"/>
+                        <div class="cut"></div>
+                        <label for="telephone" class="placeholder">Телефон*</label>
+                    </div>
                 </div>
                 <button type="text" class="submit">Отправить</button>
             </form>
@@ -107,31 +108,32 @@
             <div class="popup__close"></div>
             <form action="send.html" method="post">
                 <div class="popup__form-text">
-                    <h3 class="second-title _anim-items _anim-show-left _anim-no-hide">Оставьте свой вопрос</h3>
-                    <p class="second-desc _anim-items _anim-show-left _anim-no-hide description">Вы можете оставить заявку и мы обязательно с вами свяжемся в ближайшее время и проконсультируем по всем вопросам</p>
+                    <h3 class="second-title">Оставьте свой вопрос</h3>
+                    <p class="second-desc description">Вы можете оставить заявку и мы обязательно с вами свяжемся в ближайшее время и проконсультируем по всем вопросам</p>
                 </div>
-                <div class="input-container">
-                    <input id="name" class="input" type="text" placeholder=" " required name="name"/>
-                    <div class="cut"></div>
-                    <label for="name" class="placeholder">Ваше имя*</label>
-                </div>
-                <div class="tel-email-wrapper">
-                    <div class="input-container">
+                <div class="contacts__form-inputs">
+                    <div class="input-container i1">
+                        <input id="name" class="input" type="text" placeholder=" " required name="name"/>
+                        <div class="cut"></div>
+                        <label for="name" class="placeholder">Ваше имя*</label>
+                    </div>
+                    <div class="input-container i2">
                         <input id="telephone" class="input" type="tel" placeholder=" " required name="tel"/>
                         <div class="cut"></div>
                         <label for="telephone" class="placeholder">Телефон*</label>
                     </div>
-                    <div class="input-container">
+                    <div class="input-container i3">
                         <input id="email" class="input" type="email" placeholder=" " name="email"/>
                         <div class="cut cut-short"></div>
                         <label for="email" class="placeholder">Email</label>
                     </div>
+                    <div class="input-container i4">
+                        <textarea class="input textarea" id="messege" placeholder=" " name="msg" required></textarea>
+                        <div class="cut"></div>
+                        <label for="messege" class="placeholder">Сообщение*</label>
+                    </div>
                 </div>
-                <div class="input-container">
-                    <textarea class="input textarea" id="messege" placeholder=" " name="msg" required></textarea>
-                    <div class="cut"></div>
-                    <label for="messege" class="placeholder">Сообщение*</label>
-                </div>
+                
                 <div class="checkbox">
                     <input type="checkbox" />
                     <p>Я согласен на обработку моих <a href="#" class="personal-data-link">персональных данных</a></p></div>
@@ -143,12 +145,27 @@
         <symbol id="arrow-up-short" viewBox="0 0 16 16">
           <path fill-rule="evenodd" d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5z" />
         </symbol>
-      </svg>
-      <div class="btn-up btn-up_hide">
+    </svg>
+    <div class="btn-up btn-up_hide">
         <svg class="btn-up-icon" role="img" aria-label="Прокрутить страницу к началу">
-          <use xlink:href="#arrow-up-short"></use>
+            <use xlink:href="#arrow-up-short"></use>
         </svg>
-      </div>
+    </div>
+    <div class="burger">
+        <div class="burger__company">SkyExpo</div>
+        <div class="burger__close"></div>
+        <nav class="burger__menu">
+            <ul class="burger__list">
+                <li><a href="#" class="burger__link link about-link">О компании</a></li>
+                <li><a href="#" class="burger__link link products-link">Каталог</a></li>
+                <li><a href="#" class="burger__link link services-link">Услуги</a></li>
+                <li><a href="#" class="burger__link link">Сервис</a></li>
+                <li><a href="#" class="burger__link link">Контакты</a></li>
+            </ul>
+        </nav>
+        <div class="main__btn burger__btn">Консультация</div>
+    </div>
+    
     <header class="header">
         <div class="header__container">
             <div class="header__wrapper">
@@ -172,7 +189,11 @@
                     <div class="header__btn">
                         <div class="btn"><span>Заказать звонок</span></div>
                     </div>
+                    <div class="header__burger-wrapper">
+                        <div class="header__burger-btn"></div>
+                    </div>
                 </div>
+                
             </div>
         </div>
     </header>
@@ -182,14 +203,15 @@
             <section class="banner" id="banner">
                 <div class="bg-banner" style="background-image: url(./img/fon4-min.jpg);"></div>
                 <div class="banner__text">
+                    <p>Более 9 лет на рынке</p>
                     <h1 class="reveal-text">
-                        Заголовок
+                       Мы - простое решение сложных задач
                     </h1>
-                    <p class="reveal-text">
+                    <!-- <p class="reveal-text">
                         Какое-то описание Какое-то описание Какое-то описание Какое-то описаниеКакое-то описание
                         Какое-то описание
-                    </p>
-                    <div class="main__btn">Подробнее</div>
+                    </p> -->
+                    <div class="main__btn banner__btn">Подробнее</div>
                 </div>
                 <a href="#" class="banner__arrow-bottom"></a>
             </section>
@@ -562,7 +584,7 @@
                                             <small class="testimonial__autor-position">Директор</small>
                                         </div>
                                         <div class="projects__testimonial-btn">
-                                            <a href="" class="main__btn">Смотреть полностью</a>
+                                            <a href="#" class="main__btn">Смотреть полностью</a>
                                         </div>
                                     </div>
                                     <div class="swiper-slide">
@@ -579,7 +601,7 @@
                                                 2003»</p>
                                         </div>
                                         <div class="projects__testimonial-btn">
-                                            <a href="" class="main__btn">Смотреть полностью</a>
+                                            <a href="#" class="main__btn">Смотреть полностью</a>
                                         </div>
                                     </div>
                                     <div class="swiper-slide">
@@ -595,7 +617,7 @@
                                             <p class="testimonial__autor-position">Директор</p>
                                         </div>
                                         <div class="projects__testimonial-btn">
-                                            <a href="" class="main__btn">Смотреть полностью</a>
+                                            <a href="#" class="main__btn">Смотреть полностью</a>
                                         </div>
                                     </div>
                                     <div class="swiper-slide">
@@ -613,7 +635,7 @@
                                             </p>
                                         </div>
                                         <div class="projects__testimonial-btn">
-                                            <a href="" class="main__btn">Смотреть полностью</a>
+                                            <a href="#" class="main__btn">Смотреть полностью</a>
                                         </div>
                                     </div>
                                     <div class="swiper-slide">
@@ -631,7 +653,7 @@
                                             </p>
                                         </div>
                                         <div class="projects__testimonial-btn">
-                                            <a href="" class="main__btn">Смотреть полностью</a>
+                                            <a href="#" class="main__btn">Смотреть полностью</a>
                                         </div>
                                     </div>
                                     <div class="swiper-slide">
@@ -650,7 +672,7 @@
                                                 ОАО «Белшина»</p>
                                         </div>
                                         <div class="projects__testimonial-btn">
-                                            <a href="" class="main__btn">Смотреть полностью</a>
+                                            <a href="#" class="main__btn">Смотреть полностью</a>
                                         </div>
                                     </div>
                                 </div>
@@ -747,7 +769,7 @@
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 2c3.196 0 6 2.618 6 5.602 0 3.093-2.493 7.132-6 12.661-3.507-5.529-6-9.568-6-12.661 0-2.984 2.804-5.602 6-5.602m0-2c-4.198 0-8 3.403-8 7.602 0 4.198 3.469 9.21 8 16.398 4.531-7.188 8-12.2 8-16.398 0-4.199-3.801-7.602-8-7.602zm0 11c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3z"/></svg>
                                         </div>
                                         <div class="contacts__info-desc card-desc">
-                                            <h4 class="contacts__item-title card-title">Адрес</h4>
+                                            <h4 class="contacts__subtitle card-title">Адрес</h4>
                                             <p class="card-text">213826, Республика Беларусь, Могилёвская область, г. Бобруйск, ул. Бахарова, 26</p>
                                         </div>
                                     </div>
@@ -786,7 +808,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <iframe class="_anim-items _anim-show-bottom _anim-no-hide" src="https://yandex.ru/map-widget/v1/?um=constructor%3Ab8f8e39ace1ab20d7fbb0d1ca93cd2c063ac67413dde2fef29e02a072c58ca77&amp;source=constructor" width="100%" height="430" frameborder="0"></iframe>
+                            <div class="contacts__map">
+                                <iframe class="_anim-items _anim-show-bottom _anim-no-hide" src="https://yandex.ru/map-widget/v1/?um=constructor%3Ab8f8e39ace1ab20d7fbb0d1ca93cd2c063ac67413dde2fef29e02a072c58ca77&amp;source=constructor" width="100%" height="430" frameborder="0"></iframe>
+                            </div>
                             <div class="contacts__form-wrapper _anim-items _anim-show-bottom _anim-no-hide">
                                 <div class="contacts__form">
                                     <form action="send.html" method="post">
@@ -794,32 +818,27 @@
                                             <h3 class="second-title _anim-items _anim-show-left _anim-no-hide">Оставьте свой вопрос</h3>
                                             <p class="second-desc _anim-items _anim-show-left _anim-no-hide description">Вы можете оставить заявку и мы обязательно с вами свяжемся в ближайшее время и проконсультируем по всем вопросам</p>
                                         </div>
-                                        <div class="input-container ic1">
-                                            <input id="name" class="input" type="text" placeholder=" " required name="name"/>
-                                            <div class="cut"></div>
-                                            <label for="name" class="placeholder">Ваше имя*</label>
-                                        </div>
-                                        <div class="tel-email-wrapper">
-                                            <div class="input-container ic2">
+                                        <div class="contacts__form-inputs">
+                                            <div class="input-container i1">
+                                                <input id="name" class="input" type="text" placeholder=" " required name="name"/>
+                                                <div class="cut"></div>
+                                                <label for="name" class="placeholder">Ваше имя*</label>
+                                            </div>
+                                            <div class="input-container i2">
                                                 <input id="telephone" class="input" type="tel" placeholder=" " required name="tel"/>
                                                 <div class="cut"></div>
                                                 <label for="telephone" class="placeholder">Телефон*</label>
                                             </div>
-                                            <div class="input-container ic2">
+                                            <div class="input-container i3">
                                                 <input id="email" class="input" type="email" placeholder=" " name="email"/>
                                                 <div class="cut cut-short"></div>
                                                 <label for="email" class="placeholder">Email</label>
                                             </div>
-                                        </div>
-                                        <div class="input-container ic2">
-                                            <input id="theme" class="input" type="text" placeholder=" " name="theme"/>
-                                            <div class="cut cut-short"></div>
-                                            <label for="theme" class="placeholder">Тема</label>
-                                        </div>
-                                        <div class="input-container ic2">
-                                            <textarea class="input textarea" id="messege" placeholder=" " name="msg" required></textarea>
-                                            <div class="cut"></div>
-                                            <label for="messege" class="placeholder">Сообщение*</label>
+                                            <div class="input-container i4">
+                                                <textarea class="input textarea" id="messege" placeholder=" " name="msg" required></textarea>
+                                                <div class="cut"></div>
+                                                <label for="messege" class="placeholder">Сообщение*</label>
+                                            </div>
                                         </div>
                                         <div class="checkbox">
                                             <input type="checkbox" />
