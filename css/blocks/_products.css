@@ -1,65 +1,71 @@
 .products__wrapper {
-    position: relative;
-    width: 100%;
-    padding: 6rem 0 6.5rem;
+  position: relative;
+  width: 100%;
+  padding: 6rem 0 6.5rem;
 }
 
 .products__title-wrapper {
-    position: relative;
-    z-index: 5;
+  position: relative;
+  z-index: 5;
 }
 
 .products .swiper {
-    width: 31vw;
-    padding-top: 2.5rem;
-    padding-bottom: 2.5rem;
+  width: 31vw;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
 }
 
 .products .swiper-slide {
-    filter: blur(5px);
-    background-color: #fff;
-    border-radius: 15px;
-    overflow: hidden;
+  filter: blur(5px);
+  background-color: #fff;
+  border-radius: 15px;
+  overflow: hidden;
 }
 
 .products .swiper-slide-active {
-    filter: blur(0);
+  filter: blur(0);
 }
 
 .products__desc {
-    color: #fff;
-    max-width: 75vw;
-    margin: 0 auto;
-    margin-top: 1.5rem;
+  color: #fff;
+  max-width: 75vw;
+  margin: 0 auto;
+  margin-top: 1.5rem;
 }
 
 .products__item-desc {
-    padding: 1rem;
+  padding: 1rem 1rem 1.3rem;
 }
 
-.products__item-desc p{
-    line-height: 1.35em;
-    font-size: 1rem;
-    margin-top: 0.75rem;
-    color: #787878;
+.products__item-desc p {
+  line-height: 1.35em;
+  font-size: 1rem;
+  margin-top: 0.75rem;
+  color: #787878;
 }
 
 .products__swiper {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    position: relative;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  position: relative;
 }
 
 .products__img {
-    width: 100%;
-    background-color: #000;
-    height: 25vw;
+  width: 100%;
+  object-fit: cover;
+  background-color: #000;
+  height: 25vw;
+}
+
+.product__btn .main__btn {
+  margin-top: 20px;
+  box-shadow: 0 0 30px -10px #000;
 }
 
 .products .swiper-button-prev {
-    left: 15rem;
+  left: 15rem;
 }
 
 .products .swiper-button-next {
-    right: 15rem;
+  right: 15rem;
 }

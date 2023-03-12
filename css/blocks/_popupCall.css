@@ -1,124 +1,123 @@
 .popup__overlay {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background-color: #000;
-    opacity: 0;
-    z-index: 1000;
-    transition: 1s;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: 0;
+  z-index: 1000;
+  transition: 1s;
 }
 
 .popup__wrapper {
-    position: fixed;
-    padding: 1.5rem;
-    box-sizing: border-box;
-    left: 50%;
-    border-radius: 30px;
-    top: calc(50% + 30px);
-    transform: translate(-50%, -50%);
-    background-color: #fff;
-    z-index: 1001;
-    max-width: max(35rem, 600px);
-    opacity: 0;
-    transition: 1s;
+  position: fixed;
+  padding: 1.5rem;
+  box-sizing: border-box;
+  left: 50%;
+  border-radius: 20px;
+  top: calc(50% + 30px);
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  z-index: 1001;
+  width: 100%;
+  max-width: max(35rem, 500px);
+  opacity: 0;
+  transition: 1s;
 }
 
 .popup .cut {
-    background-color: #fff;
+  background-color: #fff;
 }
 
 .popup input,
-.popup .textarea  {
-    background-color: #ededed;
-    color: #000;
-    border: 1px solid #c9c9c9;
+.popup .textarea {
+  background-color: #ededed;
+  color: #000;
+  border: 1px solid #c9c9c9;
 }
 
 .popup .input:focus ~ .placeholder {
-    color: #2db2ff;
+  color: #2db2ff;
 }
 
 .popup__close {
-    position: absolute;
-    right: 20px;
-    top: 15px;
-    width: 30px;
-    height: 30px;
-    opacity: .3;
-    transition: .3s;
-    cursor: pointer;
-    z-index: 1002;
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  width: 30px;
+  height: 30px;
+  opacity: 0.3;
+  transition: 0.3s;
+  cursor: pointer;
+  z-index: 1002;
 }
 
 .popup__close::after,
 .popup__close::before {
-    position: absolute;
-    content: '';
-    height: 2px;
-    left: 5px;
-    top: 14px;
-    width: 20px;
-    background-color: #000;
+  position: absolute;
+  content: "";
+  height: 2px;
+  left: 5px;
+  top: 14px;
+  width: 20px;
+  background-color: #000;
 }
 
 .popup__close::after {
-    transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 
 .popup__close::before {
-    transform: rotate(-45deg);
+  transform: rotate(-45deg);
 }
 
 .popup__close:hover {
-    opacity: .7;
+  opacity: 0.7;
 }
 
 .popup .popup__form-text {
-    text-align: center;
+  text-align: center;
 }
 
 .popup .second-title {
-    margin: 0;
-    color: #7a7a7a;
+  margin: 0;
+  color: #7a7a7a;
 }
 
 .popup .second-title::before {
-    display: none;
+  display: none;
 }
-
 
 .popup .second-desc {
-    margin-top: 0.5rem;
-    font-size: 0.9rem;
-    line-height: 1.5em;
-    color: #616161;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  line-height: 1.5em;
+  color: #616161;
 }
 
-
 .popup .submit {
-    margin-top: 1.5rem;
-    height: 3rem;
-    font-size: 1.2rem;
+  margin-top: 1.5rem;
+  height: 3rem;
+  font-size: 1.2rem;
 }
 
 .popup .contacts__form-inputs {
-    grid-gap: max(1.5rem, 20px);
-    margin-top: 1.5rem;
+  grid-gap: max(1.5rem, 20px);
+  margin-top: 1.5rem;
 }
 
 .popup-email .i1 {
-    grid-column: 1/3;
+  grid-column: 1/3;
 }
 
 .popup-email .i4 {
-    grid-column: 1/3;
+  grid-column: 1/3;
 }
 
 .popup .checkbox p {
-    color: #616161;
-    font-weight: 400;
+  color: #616161;
+  font-weight: 400;
 }
 
 .popup .checkbox input {
-    background: #dbdbdb;
+  background: #dbdbdb;
 }

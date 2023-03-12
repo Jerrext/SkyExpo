@@ -1,10 +1,10 @@
 .write-to-us {
-    position: fixed;
-    right: 2.5em;
-    bottom: 2em;
-    z-index: 999;
-    width: 25em;
-    font-size: max(1rem, 12px);
+  position: fixed;
+  right: 2.5em;
+  bottom: 2em;
+  z-index: 999;
+  width: 25em;
+  font-size: max(1rem, 12px);
 }
 
 .fab-action-button svg {
@@ -13,15 +13,15 @@
 }
 
 .hint {
-    position: absolute;
-    background-color: rgb(224, 224, 224, 0.7);
-    padding: 0.6em 0.75em;
-    bottom: 0.3em;
-    right: 3em;
-    border-radius: 7px;
-    cursor: default;
-    opacity: 0;
-    transition: opacity 1s 2.5s;
+  position: absolute;
+  background-color: rgb(224, 224, 224, 0.7);
+  padding: 0.6em 0.75em;
+  bottom: 0.3em;
+  right: 3em;
+  border-radius: 7px;
+  cursor: default;
+  opacity: 0;
+  transition: opacity 1s 2.5s;
 }
 
 .hint._active {
@@ -29,19 +29,19 @@
 }
 
 .hint::before {
-    position: absolute;
-    content: '';
-    border: 0.5em solid transparent; 
-    border-left: 0.35em solid rgb(224, 224, 224, 0.7);
-    right: -0.75rem;
-    top: 0.68em;
+  position: absolute;
+  content: "";
+  border: 0.5em solid transparent;
+  border-left: 0.35em solid rgb(224, 224, 224, 0.7);
+  right: -0.75rem;
+  top: 0.68em;
 }
 
 .messege {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .fab {
@@ -58,7 +58,7 @@
 
 .fab:hover .fab-buttons {
   /* opacity: 1;
-  visibility: visible; */
+visibility: visible; */
 }
 
 .fab:hover .fab-buttons__link {
@@ -81,21 +81,23 @@
   height: 3.3em;
   background-color: #2db2ff;
   border-radius: 50%;
-  box-shadow: 0 0.1em 0.1em 0 rgba(0, 0, 0, 0.14), 0 0.05em 0.25em 0 rgba(0, 0, 0, 0.12), 0 0.15em 0.05em -0.1em rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0.1em 0.1em 0 rgba(0, 0, 0, 0.14),
+    0 0.05em 0.25em 0 rgba(0, 0, 0, 0.12),
+    0 0.15em 0.05em -0.1em rgba(0, 0, 0, 0.2);
   animation: pulsateMessege 2.5s ease-out infinite;
 }
 
 .fab-action-button::before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: -0.1em;
-    top: -0.1em;
-    border-radius: 50%;
-    opacity: .8;
-    border: 0.11em solid #2db2ff;
-    animation: pulsateCircle 2.5s ease-in 3s infinite;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: -0.1em;
+  top: -0.1em;
+  border-radius: 50%;
+  opacity: 0.8;
+  border: 0.11em solid #2db2ff;
+  animation: pulsateCircle 2.5s ease-in 3s infinite;
 }
 
 .fab-buttons {
@@ -124,12 +126,13 @@
   text-decoration: none;
   background-color: #ffffff;
   border-radius: 50%;
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12),
+    0 3px 1px -2px rgba(0, 0, 0, 0.2);
   transform: scaleY(0.5) scaleX(0.5) translateY(0px) translateX(0px);
-  -moz-transition: .3s;
-  -webkit-transition: .3s;
-  -o-transition: .3s;
-  transition: .3s;
+  -moz-transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
   border: 1px solid #fff;
 }
 
@@ -152,7 +155,7 @@
   right: 100%;
   white-space: nowrap;
   transform-origin: top right;
-  transition: all .3s cubic-bezier(.25, .8, .25, 1);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 [data-tooltip]:hover:before {
@@ -162,51 +165,37 @@
   transform-origin: right center 0;
 }
 
+.icon-material:first-of-type {
+  background-image: url("../../img/email.png");
+}
+
 .icon-material {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
   display: inline-block;
   width: 2em;
   height: 2em;
 }
 
-.icon-material_wa {
-  background: url("../../img/whatsapp.png") center no-repeat;
-  background-size: cover;
-}
-
-.icon-material_vi {
-  background: url("../../img/viber.png") center no-repeat;
-  background-size: cover;
-}
-
-.icon-material_tg {
-  background: url("../../img/telegram.png") center no-repeat;
-  background-size: cover;
-}
-
-.icon-material_email {
-  background: url("../../img/email.png") center no-repeat;
-  background-size: cover;
-}
-
-
 @keyframes pulsateMessege {
-    50% {
-        transform: scale(1.1);
-    }
-    100% {
-        transform: scale(1);
-    }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 @keyframes pulsateCircle {
-    0% {
-        transform: scale(0.9);
-    }
-    80% {
-        transform: scale(1.5);
-        opacity: 0;
-    }
-    100% {
-        opacity: 0;
-    }
+  0% {
+    transform: scale(0.9);
+  }
+  80% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
 }

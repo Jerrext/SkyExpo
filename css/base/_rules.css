@@ -1,7 +1,7 @@
 ﻿:root {
-    font-family: 'Montserrat';
-    font-weight: 500;
-    font-size: calc(1vh + 0.5vw);
+  font-family: "Montserrat";
+  font-weight: 500;
+  font-size: calc(1vh + 0.5vw);
 }
 
 /* html {
@@ -9,173 +9,173 @@
 } */
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 body {
-    background-color: #fff;
+  background-color: #fff;
 }
 
 .container {
-    margin: 0 auto;
-    padding: 0 20px;
-    max-width: max(170vh,1300px);
+  margin: 0 auto;
+  padding: 0 20px;
+  max-width: max(170vh, 1300px);
 }
 
 .title {
-    font-size: 5.5rem;
-    font-weight: 700;
-    text-align: center;
-    padding: 2.5rem 0 0;
+  font-size: 5.5rem;
+  font-weight: 700;
+  text-align: center;
+  padding: 2.5rem 0 0;
 }
 
 .second-title {
-    margin-top: 1.5rem;
-    font-size: 2rem;
-    /* text-transform: uppercase; */
-    font-weight: 700;
-    color: #ababab;
-    position: relative;
-    display: inline-block;
+  margin-top: 1.5rem;
+  font-size: 2rem;
+  /* text-transform: uppercase; */
+  font-weight: 700;
+  color: #ababab;
+  position: relative;
+  display: inline-block;
 }
 
 ._active.second-title::before {
-    content: '';
-    position: absolute;
-    height: 0.2rem;
-    /* width: 100%; */
-    border-radius: 10px;
-    top: 2.8rem;
-    left: 0;
-    background-color: #2db2ff;
-    animation: underline 1.4s ease-out .5s forwards;
+  content: "";
+  position: absolute;
+  height: 0.2rem;
+  /* width: 100%; */
+  border-radius: 10px;
+  top: 2.8rem;
+  left: 0;
+  background-color: #2db2ff;
+  animation: underline 1.4s ease-out 0.5s forwards;
 }
 
 @keyframes underline {
-    0% {
-        width: 0;
-    }
+  0% {
+    width: 0;
+  }
 
-    100% {
-        width: 40%;
-    }
+  100% {
+    width: 40%;
+  }
 }
 
 .second-desc {
-    margin-top: 1.5rem;
-    color: #787878;
+  margin-top: 1.5rem;
+  position: relative;
+  z-index: 5;
+  color: #787878;
 }
 
 .bg-cow {
-    background-repeat: no-repeat;
-    position: absolute;
-    background-size: cover;
-    z-index: 4;
+  background-repeat: no-repeat;
+  position: absolute;
+  background-size: cover;
+  z-index: 4;
 }
 
 /* Скроллбар */
 
 ::-webkit-scrollbar {
-	width: 0.45rem;
+  width: 0.45rem;
 }
 
 ::-webkit-scrollbar-track {
-	background-color: #161b22;
+  background-color: #161b22;
 }
 
 ::-webkit-scrollbar-thumb {
-	background-color: #2db2ff;
-	border-radius: 50px;
+  background-color: #2db2ff;
+  border-radius: 50px;
 }
 
 /* Шрифты */
 
-p, li {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 300;
-    font-size: 1rem;
-    line-height: 1.9em;
-    letter-spacing: 0.1rem;
+p,
+li {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-size: 1rem;
+  line-height: 1.9em;
+  letter-spacing: 0.1rem;
 }
 
 h2 {
-    text-transform: uppercase;
-    color: #cccccc;
+  text-transform: uppercase;
+  color: #cccccc;
 }
 
 h4 {
-    font-size: 1.25rem;
-    font-weight: 600;
+  font-size: 1.25rem;
+  font-weight: 600;
 }
 
 .description {
-    font-weight: 400;
-    font-size: 1rem;
+  font-weight: 400;
+  font-size: 1rem;
 }
 
 /* cards */
 
-
-
 /* Фон */
 
 .bg-banner {
-    /* background-image: url('../../img/fon4.jpg'); */
-    background-size: cover;
-    background-position: center center;
-    /* background-position: end; */
-    height: 130vh;
-    width: 100%;
-    /* position: fixed; */
-    position: absolute;
-    z-index: -2;
-    transition: transform .2s cubic-bezier(0.16, 1, 0.3, 1);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 130vh;
+  width: 100vw;
+  /* position: fixed; */
+  position: absolute;
+  z-index: -2;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .bg-img {
-    position: absolute;
-    top: 200px;
-    width: 104%;
-    left: -2%;
-    height: 160vh;
-    z-index: -5;
-    background-size: cover;
-    background-position: center;
-    filter: blur(5px);
-    transition: transform .2s cubic-bezier(0.16, 1, 0.3, 1);
+  position: absolute;
+  top: 200px;
+  width: 104%;
+  left: -2%;
+  height: 160vh;
+  z-index: -5;
+  background-size: cover;
+  background-position: center;
+  filter: blur(5px);
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* Прозрачный блок */
 
 .transparent-block {
-    width: 100%;
-    position: relative;
-    margin-top: -5vw;
-    z-index: 0;
-    text-align: center;
-    overflow: hidden;
+  width: 100%;
+  position: relative;
+  margin-top: -5vw;
+  z-index: 0;
+  text-align: center;
+  overflow: hidden;
 }
 
 .transparent-block::before {
-    position: absolute;
-    content: "";
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    opacity: .6;
-    background-color: rgba(0,0,0,.9);
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.6;
+  background-color: rgba(0, 0, 0, 0.9);
 }
 
 /* Кнопки свайпера */
 
 .swiper {
-    overflow: visible !important;
+  overflow: visible !important;
 }
 
 .swiper-button-prev,
 .swiper-button-next {
-    color: #90d9fe !important;
+  color: #90d9fe !important;
 }
 
 /* Появление элементов */
@@ -184,47 +184,47 @@ h4 {
 .left-in,
 .right-in,
 .bottom-in {
-    /* overflow: hidden; */
-    transition: transform 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+  /* overflow: hidden; */
+  transition: transform 1.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 ._anim-show-bottom,
 ._anim-show-left,
 ._anim-show-right {
-    opacity: 0;
-    transition: 2s;
+  opacity: 0;
+  transition: 2s;
 }
 
 ._anim-block-left {
-    left: -110%;
+  left: -110%;
 }
 
 ._anim-block-right {
-    left: 110%;
+  left: 110%;
 }
 
 ._anim-show-bottom {
-    transform: translate(0, 50px);
+  transform: translate(0, 50px);
 }
 
 ._anim-show-right {
-    transform: translate(30px, 0);
+  transform: translate(30px, 0);
 }
 
 ._anim-show-left {
-    transform: translate(-30px, 0);
+  transform: translate(-30px, 0);
 }
 
-._anim-show-bottom._active, 
+._anim-show-bottom._active,
 ._anim-show-left._active,
-._anim-show-right._active{
-    opacity: 1;
-    transform: translate(0, 0);
+._anim-show-right._active {
+  opacity: 1;
+  transform: translate(0, 0);
 }
 
 ._anim-block-left._active,
 ._anim-block-right._active {
-    left: 0;
+  left: 0;
 }
 
 /* Скрытие элементов */

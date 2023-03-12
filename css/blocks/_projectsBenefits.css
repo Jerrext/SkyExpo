@@ -1,164 +1,179 @@
 .projects {
-    margin-top: -5vw;
-    position: relative;
+  margin-top: -5vw;
+  position: relative;
 }
 
 .projects .title-block-left {
-    padding-right: 200px;
+  padding-right: 200px;
 }
 
 .projects__wrapper {
-    background: linear-gradient(to bottom,rgba(255,255,255,1) 0,rgba(227,227,227,1 ) 50%, rgba(255,255,255,1 ) 100%);
-    /* height: 600px; */
-    width: 100%;
-    position: relative;
-    z-index: 4;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 1) 0,
+    rgba(227, 227, 227, 1) 50%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  /* height: 600px; */
+  width: 100%;
+  position: relative;
+  z-index: 4;
 }
 
 .bg-cow2 {
-    background-image: url('../../img/cow2_5-min.png');
-    width: 40%;
-    height: 42vw;
-    top: -10vw;
-    right: 0;
+  background-image: url("../../img/cow2_5-min.png");
+  width: 40%;
+  height: 42vw;
+  top: -10vw;
+  right: 0;
 }
 
 .cards-first {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 100px 80px;
-    margin-top: 110px;
-    position: relative;
-    z-index: 5;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: max(5rem, 100px) max(4rem, 80px);
+  margin-top: 110px;
+  position: relative;
+  z-index: 5;
 }
 
 .card {
-    /* perspective: 1000px; */
-    transition: 1s;
-    opacity: 0;
-    transform: translateY(100px);
+  /* perspective: 1000px; */
+  transition: 1s;
+  opacity: 0;
+  transform: translateY(100px);
 }
 
 .card p {
-    font-size: 15px;
-    line-height: 1.7em;
+  font-size: max(0.75rem, 15px);
+  line-height: 1.7em;
 }
 
-.benefits__card:last-child  .benefits__card-item {
-    margin-bottom: 0;
+.benefits__card:last-child .benefits__card-item {
+  margin-bottom: 0;
 }
 
 .benefits__card-item {
-    transform-style: preserve-3d;
-    transform: translateY(100px);
-    width: 380px;
-    padding: 25px;
-    border-radius: 20px;
-    text-align: center;
-    box-sizing: border-box;
-    min-height: 250px;
-    background: linear-gradient(135deg, rgb(0 65 114 / 80%), rgb(0 150 219 / 80%));
-    color: #fff;
-    box-shadow: 0 0 40px -17px #000;
+  transform-style: preserve-3d;
+  transform: translateY(100px);
+  width: max(19rem, 380px);
+  padding: 25px;
+  border-radius: 20px;
+  text-align: center;
+  box-sizing: border-box;
+  min-height: 250px;
+  background: linear-gradient(
+    135deg,
+    rgb(0 65 114 / 80%),
+    rgb(0 150 219 / 80%)
+  );
+  color: #fff;
+  box-shadow: 0 0 40px -17px #000;
 }
 
 .card._active {
-    transform: translateY(0px);
-    opacity: 1;
+  transform: translateY(0px);
+  opacity: 1;
 }
 
 .benefits .card-icon {
-    position: absolute;
-    left: 50%;
-    transform: translate3d(-50%, 0, 0px);
-    width: 100px;
-    opacity: 0;
-    height: 100px;
-    border-radius: 50%;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-color: #2db2ff;
-    /* border: 3px solid #fff; */
-    box-shadow: 0 0 40px -17px #000;
-    top: 0px;
-    transition: transform .7s, background-color .7s, top .7s .4s, opacity .7s .4s;
+  position: absolute;
+  left: 50%;
+  transform: translate3d(-50%, 0, 0px);
+  width: 100px;
+  opacity: 0;
+  height: 100px;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #2db2ff;
+  /* border: 3px solid #fff; */
+  box-shadow: 0 0 40px -17px #000;
+  top: 0px;
+  transition: transform 0.7s, background-color 0.7s, top 0.7s 0.4s,
+    opacity 0.7s 0.4s;
 }
 
 .benefits .card._active .card-icon {
-    top: -50px;
-    opacity: 1;
+  top: -50px;
+  opacity: 1;
+}
+
+.benefits .card-icon svg {
+  width: 50px !important;
+  height: 50px !important;
 }
 
 .card-icon svg {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%) scale(0.8);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
 }
 
 .card-icon path {
-    fill: #fff;
-    transition: .7s;
+  fill: #fff;
+  transition: 0.7s;
 }
 
-.benefits__card-item:hover .card-icon{
-    transform: translate3d(-50%, 0, 40px);
-    background-color: rgb(255, 255, 255);
+.benefits__card-item:hover .card-icon {
+  transform: translate3d(-50%, 0, 40px);
+  background-color: rgb(255, 255, 255);
 }
 
 .benefits__card-item:hover .card-icon path {
-    fill: rgb(95, 95, 95);
+  fill: rgb(95, 95, 95);
 }
 
 .card-desc {
-    /* position: relative; */
-    margin-top: 45px;
-    /* top: 80px; */
-    /* transform: translate3d(0, -50%, 0); */
-    transition: .7s;
+  /* position: relative; */
+  margin-top: 45px;
+  /* top: 80px; */
+  /* transform: translate3d(0, -50%, 0); */
+  transition: 0.7s;
 }
 
 .benefits__card-item:hover .card-desc {
-    transform: translate3d(0, 0, 40px);
+  transform: translate3d(0, 0, 40px);
 }
 
 .card-title {
-    font-size: 22px;
-    opacity: 0;
-    transform: translateX(-30px);
-    transition: 1s .8s;
-    position: relative;
+  font-size: max(1.1rem, 22px);
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: 1s 0.8s;
+  position: relative;
 }
 
 .card-title::before {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    border-radius: 10px;
-    height: 2px;
-    width: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #2db2ff;
-    transition: 1.5s 1.3s;
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  border-radius: 10px;
+  height: 2px;
+  width: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #2db2ff;
+  transition: 1.5s 1.3s;
 }
 
-.card._active .card-title::before{
-    width: 100%
+.card._active .card-title::before {
+  width: 100%;
 }
 
 .card-text {
-    margin-top: 30px;
-    /* font-size: 17px; */
-    line-height: 20x;
-    opacity: 0;
-    transform: translateX(-30px);
-    transition: 1s 1s;
+  margin-top: 30px;
+  /* font-size: 17px; */
+  line-height: 20x;
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: 1s 1s;
 }
 
 .card._active .card-title,
 .card._active .card-text {
-    opacity: 1;
-    transform: translateX(0);
+  opacity: 1;
+  transform: translateX(0);
 }

@@ -49,6 +49,36 @@ const loadingAnim = () => {
 
 loadingAnim()
 
+// Добавление классов
+
+const animationClassAdd = () => {
+  const infoCard = [...document.querySelectorAll('.info__card')]
+  
+  infoCard.forEach((item, index) => {
+    if (index % 2 === 0) {
+      item.classList.add("left-in")
+      item.firstElementChild.classList.add("_anim-block-left")
+      item.lastElementChild.classList.add("_anim-show-left")
+
+    } else {
+      item.classList.add("right-in")
+      item.firstElementChild.classList.add("_anim-block-right")
+      item.lastElementChild.classList.add("_anim-show-right")
+    }
+  })
+}
+
+animationClassAdd()
+
+// Добавление viewBox к иконкам преимуществ
+
+const viewBoxAdd = () => {
+  const svgIcons = [...document.querySelectorAll('.benefits .card-icon svg')]
+  svgIcons.forEach(item => item.setAttribute("viewBox", "0 0 25 25"))
+}
+
+viewBoxAdd()
+
 // Модальные окна
 
 const overflowToggle = (arg) => {
@@ -192,11 +222,14 @@ window.addEventListener("scroll", () => {
 
   // Анимация блоков
 
-  if (window.innerWidth < 1000) return false
 
   document.querySelectorAll(".title-block-left").forEach(item => {
-    if (cord(item) < (window.innerHeight + 100) && cord(item) > -300) {
-      item.style.transform = `translateX(${cord(item)/7}px)`
+    if (window.innerWidth > 1000) {
+      if (cord(item) < (window.innerHeight + 100) && cord(item) > -300) {
+        item.style.transform = `translateX(${cord(item)/7}px)`
+      }
+    } else {
+      item.style.transform = ''
     }
   })
 
@@ -204,20 +237,32 @@ window.addEventListener("scroll", () => {
     // if (item.classList.contains("bg-img")) {
     //   item.style.transform = `translateY(${cord(item) - 1350}px)`
     // }
-    if (cord(item) < (window.innerHeight + 100) && cord(item) > -300) {
-      item.style.transform = `translateY(${cord(item)/15 - 20}px)`
+    if (window.innerWidth > 1000) {
+      if (cord(item) < (window.innerHeight + 100) && cord(item) > -300) {
+        item.style.transform = `translateY(${cord(item)/15 - 20}px)`
+      }
+    } else {
+      item.style.transform = ''
     }
   })
 
   document.querySelectorAll(".left-in").forEach(item => {
-    if (cord(item) < (window.innerHeight + 100) && cord(item) > -300) {
-      item.style.transform = `translateX(${-cord(item)/10 + 50}px)`
+    if (window.innerWidth > 1000) {
+      if (cord(item) < (window.innerHeight + 100) && cord(item) > -300) {
+        item.style.transform = `translateX(${-cord(item)/10 + 50}px)`
+      }
+    } else {
+      item.style.transform = ''
     }
   })
 
   document.querySelectorAll(".right-in").forEach(item => {
-    if (cord(item) < (window.innerHeight + 100) && cord(item) > -300) {
-      item.style.transform = `translateX(${cord(item)/10 - 50}px)`
+    if (window.innerWidth > 1000) {
+      if (cord(item) < (window.innerHeight + 100) && cord(item) > -300) {
+        item.style.transform = `translateX(${cord(item)/10 - 50}px)`
+      }
+    } else {
+      item.style.transform = ''
     }
   })
 })
@@ -333,6 +378,8 @@ observerServices.observe(servicesItems, obs);
 
 const servicesLeft = document.querySelector('.services__left')
 
+const servicesInterval = window.innerWidth < 700 ? 300 : 800
+
 const observerServicesLeft = new MutationObserver(function(mutations) {
   let i = 0
   const servicesShowLeft = setInterval(() => {
@@ -342,7 +389,7 @@ const observerServicesLeft = new MutationObserver(function(mutations) {
       servicesLeft.firstElementChild.children[i].classList.add("_active")
       i++
     }
-  }, 800)
+  }, servicesInterval)
 });
 
 observerServicesLeft.observe(servicesLeft, obs);
@@ -436,17 +483,25 @@ observerCardsSecond.observe(cardsWrapperSecond, obs);
 
 // Наведение на 3D карточки
 
-cards = document.querySelectorAll('.benefits__card-item')
 
-VanillaTilt.init(cards, {
-  reverse: true,
-  max: 7,
-  glare: true,
-  'max-glare': 0.2,
-  scale:  1.05,  // Масштабирование
-  transition:  true,
-  speed: 3000,
-})
+const cardHover = () => {
+  console.log(window.innerWidth)
+  if(window.innerWidth < 800) return
+
+  cards = document.querySelectorAll('.benefits__card-item')
+
+  VanillaTilt.init(cards, {
+    reverse: true,
+    max: 7,
+    glare: true,
+    'max-glare': 0.2,
+    scale:  1.05,  // Масштабирование
+    transition:  true,
+    speed: 3000,
+  })
+}
+
+cardHover()
 
 // Кнопка вверх
 
@@ -599,8 +654,21 @@ var swiper1 = new Swiper(".mySwiper1", {
   loop: true
 });
 
+const getSlidesPerViewSwiper2 = () => {
+  let screenWidth = 1.8
+
+  if (window.innerWidth < 700 && window.innerWidth > 500) {
+    screenWidth = 1.5
+  } else if (window.innerWidth < 500) {
+    screenWidth = 1.2
+  }
+
+  return screenWidth
+}
+
+
 var swiper2 = new Swiper(".mySwiper2", {
-  slidesPerView: 1.8,
+  slidesPerView: getSlidesPerViewSwiper2(),
   centeredSlides: true,
   spaceBetween: 30,
   autoplay: {
@@ -619,21 +687,27 @@ var swiper2 = new Swiper(".mySwiper2", {
   loop: true
 });
 
-const getSlidesPerView = () => {
+const getSlidesPerViewSwiper3 = () => {
   let screenWidth = 5
 
   if (window.innerWidth < 1650 && window.innerWidth > 1200) {
     screenWidth = 4 
-  } else if (window.innerWidth < 1200) {
+  } else if (window.innerWidth < 1200 && window.innerWidth > 1000) {
     screenWidth = 3
-  } 
+  } else if (window.innerWidth < 1000 && window.innerWidth > 900) {
+    screenWidth = 4
+  } else if (window.innerWidth < 900 && window.innerWidth > 700) {
+    screenWidth = 3
+  } else if (window.innerWidth < 900) {
+    screenWidth = 2
+  }
 
   return screenWidth
 }
 
 
 var swiper3 = new Swiper(".mySwiper3", {
-  slidesPerView: getSlidesPerView(),
+  slidesPerView: getSlidesPerViewSwiper3(),
   centeredSlides: true,
   spaceBetween: 30,
   autoplay: {
