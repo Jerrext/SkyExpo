@@ -15,7 +15,6 @@ const loadingAnim = () => {
   const hint = document.querySelector('.hint')
   const fab = document.querySelector('.fab')
   // const translateX = ((item1.parentElement.parentElement.clientWidth - item1.clientWidth) / 2)
-  console.log(item2.getBoundingClientRect().width)
   setTimeout(() => {item1.style.width = `${item2.getBoundingClientRect().width}px`}, 500)
   
   // item2.style.transform = `translate(${translateX}px, 0)`
@@ -30,6 +29,7 @@ const loadingAnim = () => {
     document.body.style.overflow = "hidden auto"
     setTimeout(() => {
       loading.style.display = 'none'
+      document.querySelector(".water-fill").style.animation = "none"
     }, 1500)
 
     hint.classList.add("_active")
@@ -57,13 +57,13 @@ const animationClassAdd = () => {
   infoCard.forEach((item, index) => {
     if (index % 2 === 0) {
       item.classList.add("left-in")
-      item.firstElementChild.classList.add("_anim-block-left")
-      item.lastElementChild.classList.add("_anim-show-left")
+      // item.firstElementChild.classList.add("_anim-block-left")
+      // item.lastElementChild.classList.add("_anim-show-left")
 
     } else {
       item.classList.add("right-in")
-      item.firstElementChild.classList.add("_anim-block-right")
-      item.lastElementChild.classList.add("_anim-show-right")
+      // item.firstElementChild.classList.add("_anim-block-right")
+      // item.lastElementChild.classList.add("_anim-show-right")
     }
   })
 }
@@ -141,7 +141,7 @@ const bugerClose = document.querySelector(".burger__close")
 const burgerMenuBtnHandler = () => {
   burgerMenu.style.display = "block"
   setTimeout(() => {
-    burgerMenu.style.left = "0"
+    burgerMenu.style.transform = "translateX(0)"
     let i = 0
     burgerTitle.style.opacity = "1"
     overflowToggle(false)
@@ -162,7 +162,7 @@ const burgerMenuBtnHandler = () => {
 }
 
 const burgerCloseHandler = () => {
-  burgerMenu.style.left = "-100vw"
+  burgerMenu.style.transform = "translateX(-100vw)"
   overflowToggle(true)
   burgerTitle.style.opacity = ""
   burgerList.forEach(item => item.classList.remove("_active"))
@@ -204,7 +204,6 @@ const showBlocks = () => {
 
 //   for (let i = 0; i < animItemsOut.length; i++) {
 //     if ((offset(animItemsOut[i]).top < blockOut)) {
-//       // console.log(cord(animItemsOut[i]))
 //       animItemsOut[i].style.transform = `translateY(${cord(animItemsOut[i])/3 - window.innerHeight/20}px)`
 //     }
 //   }
@@ -213,10 +212,14 @@ const showBlocks = () => {
 window.addEventListener("scroll", () => {
   showBlocks()
   // hideBlocks()
+  if (cord(bgBanner) < (window.innerHeight) && cord(bgBanner) > -800) {
+    bgBanner.style.transform = `translate3d(0,${-cord(bgBanner)/2}px,0)`
+  }
 
-  bgBanner.style.transform = `translate3d(0,${-cord(bgBanner)/2}px,0)`
   document.querySelectorAll('.bg-img').forEach(item => {
-    item.style.transform = `translateY(${-cord(item)/3 - 300}px)`
+    if (cord(item) < (window.innerHeight) && cord(item) > -900) {
+      item.style.transform = `translateY(${-cord(item)/3}px)`
+    }
   })
   // titleRight.style.transform = `translateX(${cord(titleRight)/5 - 100}px)`
 
@@ -321,7 +324,6 @@ window.addEventListener("scroll", (e) => {
 
 const elemOffsetY = (elem) => {
   let box = elem.getBoundingClientRect()
-  console.log(box.top + window.pageYOffset)
   return box.top + window.pageYOffset
 }
 
@@ -447,7 +449,6 @@ for (let i = 0; i < acc.length; i++) {
 const cardsWrapperFirst = document.querySelector('.cards-first')
 
 const observerCardsFirst = new MutationObserver(function(mutations) {
-  // console.log(mutations);
   let i = 0
   const cardsShow = setInterval(() => {
     if (cardsWrapperFirst.lastElementChild.classList.contains("_active")) {
@@ -465,7 +466,6 @@ observerCardsFirst.observe(cardsWrapperFirst, obs);
 const cardsWrapperSecond = document.querySelector('.cards-second')
 
 const observerCardsSecond = new MutationObserver(function(mutations) {
-  // console.log(mutations);
   let i = 0
   cardsWrapperSecond.children[i].classList.add("_active")
   i++
@@ -485,7 +485,6 @@ observerCardsSecond.observe(cardsWrapperSecond, obs);
 
 
 const cardHover = () => {
-  console.log(window.innerWidth)
   if(window.innerWidth < 800) return
 
   cards = document.querySelectorAll('.benefits__card-item')
@@ -553,7 +552,6 @@ const btnUp = {
 
 btnUp.addEventListener();
 
-// console.log(cards)
 
 // for (let i = 0; i < cards.length; i++) {
 //   cards[i].addEventListener('mousemove', startRotate)
@@ -564,7 +562,6 @@ btnUp.addEventListener();
 //   const cardItem = this.querySelector('.projects__benefits-card-item')
 //   const halfHeight = cardItem.offsetHeight / 2
 //   const halfWidth = cardItem.offsetWidth / 2
-//   console.log(e.offsetX)
   
 //   cardItem.style.transform = `rotateY(${(e.offsetX - halfWidth) / 10}deg) rotateX(${-(e.offsetY - halfHeight) / 10}deg)`
 // }
@@ -594,7 +591,6 @@ btnUp.addEventListener();
 //             if (animItemHeight > window.innerHeight) {
 //                 animItemPoint = window.innerHeight - window.innerHeight / animStart;
 //             }
-//             console.log(offset(titleRight).bottom)
 //             if ((pageYOffset > animItemOffset - animItemPoint) && pageYOffset < (animItemOffset + animItemHeight)) {
 //                 animItem.classList.add('_active');
 //             } else {
@@ -621,7 +617,6 @@ btnUp.addEventListener();
 //   let a = window.scrollY
 //   let coef = 0.1
 //   b = a * coef
-//   console.log(window.scrollY)
 //   titleLeft.style.transform = `translateX(${-b}px)`
 // })
 

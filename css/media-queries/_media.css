@@ -337,7 +337,7 @@
   }
 
   ._active.services__list-item {
-    height: 3.75rem;
+    height: 6rem;
   }
 
   .services__list-item::before {

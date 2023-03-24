@@ -48,6 +48,7 @@
   clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
   background-size: cover;
   animation: a 5s forwards;
+  will-change: clip-path;
 }
 
 /* .loading__cow:hover {
@@ -136,20 +137,6 @@
 .water-fill {
   position: absolute;
   animation: wave 1s infinite linear, fill-up 6s infinite alternate;
-}
-
-.loading__logo {
-  width: 120px;
-  animation: pulsateLogo 0.8s infinite alternate;
-}
-
-@keyframes pulsateLogo {
-  0% {
-    transform: scale(1.65);
-  }
-  100% {
-    transform: scale(1.7);
-  }
 }
 
 .loader {

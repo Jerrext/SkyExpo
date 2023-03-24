@@ -10,7 +10,7 @@
 }
 
 .header__container {
-  max-width: 170vh;
+  max-width: 88vw;
   margin: 0 auto;
 }
 
@@ -163,7 +163,7 @@
 .burger {
   text-align: center;
   display: none;
-  left: -100vw;
+  transform: translateX(-100vw);
   position: fixed;
   z-index: 1010;
   width: 100vw;
@@ -171,7 +171,7 @@
   background-size: cover;
   background-position: center 20%;
   background-repeat: no-repeat;
-  transition: left 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
   font-size: 2rem;
 }
 
@@ -260,7 +260,6 @@
   top: 1em;
   width: 1em;
   height: 1em;
-  transition: 0.3s;
   cursor: pointer;
   z-index: 1002;
   opacity: 0;

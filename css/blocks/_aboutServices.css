@@ -20,16 +20,18 @@
 .services__list-item {
   position: relative;
   display: block;
-  height: 0;
+  height: 5.3rem;
+  box-sizing: border-box;
+  /* opacity: 0; */
   padding: 1rem 0 1rem 2rem;
   color: #4d4d4d;
   font-weight: 400;
-  transition: .4s .5s;
+  transition: opacity .4s .5s;
 }
 
-._active.services__list-item {
-  height: 3rem; 
-}
+/* ._active.services__list-item {
+  opacity: 1; 
+} */
 
 .services__list-item span {
   opacity: 0;
@@ -70,7 +72,7 @@
   content: "";
   left: 3px;
   top: 2.4rem;
-  transition: 0s .5s;
+  transition: 1.5s .5s;
 }
 
 ._active.services__list-item::after {

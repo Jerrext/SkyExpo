@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/catalog/main-catalog.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+    <title>SkyExpo</title>
+</head>
+<body>
+  <div class="write-to-us">
+    <span class="hint" onmousedown="return false">Написать нам</span>
+    <div class="fab">
+        <span class="fab-action-button">
+            <svg role="presentation" class="t898__icon t898__icon-write messege" viewBox="0 0 35 32" xmlns="">
+                <path
+                    d="M11.2667 12.6981H23.3667M11.2667 16.4717H23.3667M4.8104 23.5777C2.4311 21.1909 1 18.1215 1 14.7736C1 7.16679 8.38723 1 17.5 1C26.6128 1 34 7.16679 34 14.7736C34 22.3804 26.6128 28.5472 17.5 28.5472C15.6278 28.5472 13.8286 28.2868 12.1511 27.8072L12 27.7925L5.03333 31V23.8219L4.8104 23.5777Z"
+                    stroke="#ffffff" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"
+                    stroke-linejoin="round" fill="none"></path>
+            </svg>
+        </span>
+        <ul class="fab-buttons">
+            <li class="fab-buttons__item">
+                <div class="fab-buttons__link" data-tooltip="Email">
+                    <i class="icon-material"></i>
+                </div>
+            </li>
+            <li class="fab-buttons__item">
+                <a href="#" class="fab-buttons__link" data-tooltip="Telegram">
+                    <i class="icon-material" style="background-image: url(./img/telegram.png);"></i>
+                </a>
+            </li>
+            <li class="fab-buttons__item">
+                <a href="#" class="fab-buttons__link" data-tooltip="Viber">
+                    <i class="icon-material" style="background-image: url(./img/viber.png);"></i>
+                </a>
+            </li>
+            <li class="fab-buttons__item">
+                <a href="#" class="fab-buttons__link" data-tooltip="WhatsApp">
+                    <i class="icon-material" style="background-image: url(./img/whatsapp.png);"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+  </div>
+  <div class="popup-call popup" style="display: none;">
+    <div class="popup__overlay"></div>
+    <div class="popup__wrapper">
+        <div class="popup__close"></div>
+        <form action="send.html" method="post">
+            <div class="popup__form-text">
+                <h3 class="second-title">Заказать звонок</h3>
+                <p class="second-desc description">Оставьте заявку и мы свяжемся с вами в ближайшее время и проконсультируем по всем вопросам</p>
+            </div>
+            <div class="contacts__form-inputs">
+                <div class="input-container i2">
+                    <input id="name" class="input" type="text" placeholder=" " required name="name"/>
+                    <div class="cut"></div>
+                    <label for="name" class="placeholder">Ваше имя*</label>
+                </div>
+                <div class="input-container i3">
+                    <input id="telephone" class="input" type="tel" placeholder=" " required name="tel"/>
+                    <div class="cut"></div>
+                    <label for="telephone" class="placeholder">Телефон*</label>
+                </div>
+            </div>
+            <button type="text" class="submit">Отправить</button>
+        </form>
+    </div>
+  </div>
+  <div class="popup-email popup" style="display: none;">
+    <div class="popup__overlay"></div>
+    <div class="popup__wrapper">
+        <div class="popup__close"></div>
+        <form action="send.html" method="post">
+            <div class="popup__form-text">
+                <h3 class="second-title">Оставьте свой вопрос</h3>
+                <p class="second-desc description">Вы можете оставить заявку и мы обязательно с вами свяжемся в ближайшее время и проконсультируем по всем вопросам</p>
+            </div>
+            <div class="contacts__form-inputs">
+                <div class="input-container i1">
+                    <input id="name" class="input" type="text" placeholder=" " required name="name"/>
+                    <div class="cut"></div>
+                    <label for="name" class="placeholder">Ваше имя*</label>
+                </div>
+                <div class="input-container i2">
+                    <input id="telephone" class="input" type="tel" placeholder=" " required name="tel"/>
+                    <div class="cut"></div>
+                    <label for="telephone" class="placeholder">Телефон*</label>
+                </div>
+                <div class="input-container i3">
+                    <input id="email" class="input" type="email" placeholder=" " name="email"/>
+                    <div class="cut cut-short"></div>
+                    <label for="email" class="placeholder">Email</label>
+                </div>
+                <div class="input-container i4">
+                    <textarea class="input textarea" id="messege" placeholder=" " name="msg" required></textarea>
+                    <div class="cut"></div>
+                    <label for="messege" class="placeholder">Сообщение*</label>
+                </div>
+            </div>
+            
+            <div class="checkbox">
+                <input type="checkbox" />
+                <p>Я согласен на обработку моих <a href="#" class="personal-data-link">персональных данных</a></p></div>
+            <button type="text" class="submit">Отправить</button>
+        </form>
+    </div>
+  </div>
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <symbol id="arrow-up-short" viewBox="0 0 16 16">
+      <path fill-rule="evenodd" d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5z" />
+    </symbol>
+  </svg>
+  <div class="btn-up btn-up_hide">
+    <svg class="btn-up-icon" role="img" aria-label="Прокрутить страницу к началу">
+        <use xlink:href="#arrow-up-short"></use>
+    </svg>
+  </div>
+  <div class="burger" style="background-image: url(./img/fon1-min.jpg);">
+    <div class="burger__company">SkyExpo</div>
+    <div class="burger__close"></div>
+    <nav class="burger__menu">
+        <ul class="burger__list">
+            <li><a href="#" class="burger__link link about-link">О компании</a></li>
+            <li><a href="#" class="burger__link link products-link">Каталог</a></li>
+            <li><a href="#" class="burger__link link services-link">Услуги</a></li>
+            <li><a href="#" class="burger__link link">Сервис</a></li>
+            <li><a href="#" class="burger__link link">Контакты</a></li>
+        </ul>
+    </nav>
+    <div class="main__btn burger__btn">Консультация</div>
+  </div>
+
+  <header class="header">
+    <div class="header__container">
+        <div class="header__wrapper">
+            <a href="#">
+                <img src="./img/logo_6.png" alt="Logo" class="header__logo">
+            </a>
+            <nav class="header__navigation">
+                <ul class="header__nav-list">
+                    <li><a href="#" class="header__nav-link link about-link">О компании</a></li>
+                    <li><a href="#" class="header__nav-link link products-link">Каталог</a></li>
+                    <li><a href="#" class="header__nav-link link services-link">Услуги</a></li>
+                    <li><a href="#" class="header__nav-link link">Сервис</a></li>
+                    <li><a href="#" class="header__nav-link link">Контакты</a></li>
+                </ul>
+            </nav>
+            <div class="header__tel">
+                <div class="header__tel-numbers">
+                    <a href="tel:+375447404933" class="header__phone link">+375 (44) 7404933</a>
+                    <a href="tel:+79312816821" class="header__phone link">+7 (931) 2816821</a>
+                </div>
+                <div class="header__btn">
+                    <div class="btn"><span>Заказать звонок</span></div>
+                </div>
+                <div class="header__burger-wrapper">
+                    <div class="header__burger-btn"></div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+  </header>
+  <div class="bg-banner-wrapper">
+    <div class="bg-banner" style="background-image: url(./img/fon4-min.jpg);"></div>
+  </div>
+  <main>
+    <div class="darkin-bg"></div>
+    <section class="catalog">
+      <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewbox="0 25 160 40"
+          class="waves waves-top">
+          <defs>
+              <path id="wave"
+                  d="M-150 53c30.77 0 59.538-20 90-20 31.077 0 60.256 20 90 20 30.77 0 59.23-20 90-20 30.77 0 59.23 20 90 20v20h-360z" />
+          </defs>
+          <g>
+              <use xlink:href="#wave" x="50" y="0" fill="#7986cb" />
+              <use xlink:href="#wave" x="50" y="2" fill="#5c6bc0" />
+              <use xlink:href="#wave" x="50" y="6" fill="#ffffff" />
+          </g>
+      </svg>
+      <div class="catalog__wrapper">
+        <div class="bg-cow bg-cow1"></div>
+        <div class="catalog__breadcrumbs2">
+          <a href="#" class="catalog__breadcrumbs-item">Главная</a>
+          <a href="#" class="catalog__breadcrumbs-item">Каталог</a>
+        </div>
+        <div class="catalog__content">
+          <div>
+            <div class="catalog__list">
+              <ul class="catalog__sidebar">
+                <li><a href="#" class="catalog__link">Доильное оборудование FLACO</a></li>
+                <li><a href="#" class="catalog__link">Запчасти к доильным залам DELAVAL</a></li>
+                <li><a href="#" class="catalog__link">Запчасти к доильным залам Westfalia</a></li>
+                <li><a href="#" class="catalog__link">Доильный роботы Lely</a></li>
+                <li><a href="#" class="catalog__link">Анализатор соматических клеток DCC</a></li>
+                <li><a href="#" class="catalog__link">Вакуумные установки</a></li>
+                <li><a href="#" class="catalog__link">Молочные насосы</a></li>
+                <li><a href="#" class="catalog__link">Молокоприемники</a></li>
+                <li><a href="#" class="catalog__link">Гигиена</a></li>
+                <li><a href="#" class="catalog__link">Системы и компоненты BEKO</a></li>
+                <li><a href="#" class="catalog__link">Сосковая резина</a></li>
+                <li><a href="#" class="catalog__link">Сельхозтехника TOSUN</a></li>
+                <li><a href="#" class="catalog__link">Салфетки для обработки вымени Eurocell</a></li>
+                <li><a href="#" class="catalog__link">Салфетки для обработки вымени Eurocell</a></li>
+                <li><a href="#" class="catalog__link">УЗИ</a></li>
+                <li><a href="#" class="catalog__link">Тестирование молока на наличие антибиотиков</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="catalog__items-wrapper">
+            <div class="catalog__breadcrumbs1">
+              <a href="#" class="catalog__breadcrumbs-item">Главная</a>
+              <a href="#" class="catalog__breadcrumbs-item">Каталог</a>
+            </div>
+            <h2 class="second-title">Доильное оборудование FLACO</h2>
+            <div class="catalog__text _anim-items _anim-no-hide">
+              <h3 class="catalog__subtitle">Доильный Аппарат Flaco Star Ease</h3>
+              <p class="catalog__desc">Хлебные крошки — это способ навигации, который показывает ваше текущее расположение на сайте и путь, по которому к нему можно попасть, начиная с главной страницы. В этом уроке расскажу, как сделать правильные хлебные крошки на сайте WordPress без плагинов. Для того, чтобы добавить хлебные крошки на сайт на WordPress вам не нужен специальный плагин «хлебные крошки», не нужно самому долго и мучительно придумывать как «</p>
+            </div>
+            <div class="catalog__items _anim-items _anim-no-hide">
+              <div>
+                <div class="catalog__card">
+                  <div class="catalog__card-img">
+                    <img src="./img/apparat.jpg" alt="">
+                  </div>
+                  <div class="catalog__card-text">
+                    <h3 class="catalog__card-title">Доильный Аппарат Flaco Star Ease</h3>
+                    <p class="catalog__card-desc">В новой системе “Flaco Star Ease” производится фаза мягкой и эффективной дойки с деликатным и стабильным массажем вымени.</p>
+                  </div>
+                  <div class="catalog__card-btn">
+                    <div class="main__btn">Подробнее</div>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div class="catalog__card">
+                  <div class="catalog__card-img">
+                    <img src="./img/apparat.jpg" alt="">
+                  </div>
+                  <div class="catalog__card-text">
+                    <h3 class="catalog__card-title">Доильный Аппарат Flaco Star Ease</h3>
+                    <p class="catalog__card-desc">В новой системе “Flaco Star Ease” производится фаза мягкой и эффективной дойки с деликатным и стабильным массажем вымени.</p>
+                  </div>
+                  <div class="catalog__card-btn">
+                    <div class="main__btn">Подробнее</div>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div class="catalog__card">
+                  <div class="catalog__card-img">
+                    <img src="./img/apparat.jpg" alt="">
+                  </div>
+                  <div class="catalog__card-text">
+                    <h3 class="catalog__card-title">Доильный Аппарат Flaco Star Ease</h3>
+                    <p class="catalog__card-desc">В новой системе “Flaco Star Ease” производится фаза мягкой и эффективной дойки с деликатным и стабильным массажем вымени.</p>
+                  </div>
+                  <div class="catalog__card-btn">
+                    <div class="main__btn">Подробнее</div>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div class="catalog__card">
+                  <div class="catalog__card-img">
+                    <img src="./img/apparat.jpg" alt="">
+                  </div>
+                  <div class="catalog__card-text">
+                    <h3 class="catalog__card-title">Доильный Аппарат Flaco Star Ease</h3>
+                    <p class="catalog__card-desc">В новой системе “Flaco Star Ease” производится фаза мягкой и эффективной дойки с деликатным и стабильным массажем вымени.В новой системе “Flaco Star Ease” производится фаза мягкой и эффективной дойки с деликатным и стабильным массажем вымени.</p>
+                  </div>
+                  <div class="catalog__card-btn">
+                    <div class="main__btn">Подробнее</div>
+                  </div>
+                  <div class="catalog__product-link-wrapper">
+                    <a href="#" class="catalog__product-link">Доильные залы FLACO</a>
+                    <a href="#" class="catalog__product-link">Подвесные части доильных аппаратов FLACO</a>
+                    <a href="#" class="catalog__product-link">Системы учета молока FLACO</a>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+            <div class="catalog__text _anim-items _anim-no-hide">
+              <h3 class="catalog__subtitle">Доильный Аппарат Flaco Star Ease</h3>
+              <p class="catalog__desc">Хлебные крошки — это способ навигации, который показывает ваше текущее расположение на сайте и путь, по которому к нему можно попасть, начиная с главной страницы. В этом уроке расскажу, как сделать правильные хлебные крошки на сайте WordPress без плагинов. Для того, чтобы добавить хлебные крошки на сайт на WordPress вам не нужен специальный плагин «хлебные крошки», не нужно самому долго и мучительно придумывать как «</p>
+            </div>
+            <div class="catalog__text _anim-items _anim-no-hide">
+              <h3 class="catalog__subtitle">Доильный Аппарат Flaco Star Ease</h3>
+              <p class="catalog__desc">Хлебные крошки — это способ навигации, который показывает ваше текущее расположение на сайте и путь, по которому к нему можно попасть, начиная с главной страницы. В этом уроке расскажу, как сделать правильные хлебные крошки на сайте WordPress без плагинов. Для того, чтобы добавить хлебные крошки на сайт на WordPress вам не нужен специальный плагин «хлебные крошки», не нужно самому долго и мучительно придумывать как «</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer" id="footer">
+    <div class="footer__wrapper">
+      <p>© 2023 ООО "СкайЭкспо" | Все права защищены</p>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <script src="./scripts/vanilla-tilt.js"></script>
+  <script src="./scripts/catalog.js"></script>
+</body>
+
+</html>

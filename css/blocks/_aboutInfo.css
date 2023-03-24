@@ -37,6 +37,8 @@
   margin-bottom: 50px;
   display: flex;
   position: relative;
+  opacity: 0;
+  transition: opacity 2s;
   /* z-index: 9; */
 }
 
@@ -47,13 +49,18 @@
 .info__card {
   padding: 3rem;
   max-width: 32vw;
-  color: #fff;
   border-radius: 15px;
   position: relative;
   margin: 0 auto;
   left: 20rem;
   overflow: hidden;
+  will-change: transformX;
+  color: #fff;
   /* box-shadow: 0 0 40px 0px rgba(0,0,0,.3); */
+}
+
+.info__item._active {
+  opacity: 1;
 }
 
 .info__card-bg {
@@ -64,7 +71,7 @@
   /* transform: scale(1.2); */
   /* background-image: url("../../img/spot2.png"); */
   background-size: 100% 100%;
-  opacity: 1;
+  left: 0;
   background-position: center center;
   background: -webkit-linear-gradient(
     135deg,
@@ -81,7 +88,7 @@
     rgba(28, 183, 255, 0.8),
     rgba(0, 136, 199, 0.904)
   );
-  transition: 1s;
+  z-index: -1;
 }
 
 .info__item:nth-child(even) .info__card {
@@ -93,6 +100,7 @@
   height: 100%;
   position: absolute;
   bottom: 0;
+  will-change: transformY;
   /* transform: translateY(-50%); */
   /* background-color: #000; */
   left: 0;
@@ -116,7 +124,7 @@
   right: 0;
 }
 
-.info__desc._anim-show-right,
+/* .info__desc._anim-show-right,
 .info__desc._anim-show-left {
   transition: 2s 0.3s;
-}
+} */
